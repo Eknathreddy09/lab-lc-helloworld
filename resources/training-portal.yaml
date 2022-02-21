@@ -7,13 +7,6 @@ spec:
     registration:
       type: one-step
       enabled: true
-    credentials:
-      admin:
-        username: admin
-        password: "Newstart@1"
-      robot:
-        username: robot-user
-        password: "Welcome11!"
   workshops:
   - name: lab-lc-helloworld
     capacity: 10
