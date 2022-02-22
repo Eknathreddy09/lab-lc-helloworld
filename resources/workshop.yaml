@@ -3,15 +3,15 @@ kind: Workshop
 metadata:
   name: lab-lc-helloworld
 spec:
-  title: Hello from Eknath
-  description: Workshop created to demo the workload creation in TKG
+  title: Hello, Welcome to TKO Workshop
+  description: Workshop created to demo the TKG cluster creation using different methods.
   vendor: eduk8s.io
   difficulty: beginner
   duration: 15m
   url: https://github.com/Eknathreddy09/lab-lc-helloworld
   content:
      files: github.com/Eknathreddy09/lab-lc-helloworld?ref=main
-     image: docker.io/eknath009/lcimagewithoutaz:newest
+     image: docker.io/eknath009/partnerdemo-vmware:latest
   session:
     namespaces:
       budget: small
