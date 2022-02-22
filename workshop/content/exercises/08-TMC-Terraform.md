@@ -1,3 +1,4 @@
+### In this section lets go through the steps to manage clusters in TMC using terraform. 
 
 ##### Check Terraform Version
 
@@ -5,19 +6,31 @@
 terraform version
 ```
 
-##### Change the ci
+##### Change the directory
 
 ```execute
-cd ~/terraform-tmc
+cd ~/terraform-demo
 ```
 
-##### Read the file
+##### Read the terraform files
 
 ```execute
-cat provider-tmc.tf
+cat provider.tf
 ```
 
-edit and change the API token in provider.tf file
+```execute
+cat create-cg.tf
+```
+
+```execute
+cat create-cluster-tkgs.tf
+```
+
+##### Edit and change the API token and org name in provider.tf file > Save
+
+```execute
+vi provider.tf
+```
 
 ##### Initialize the providers
 
@@ -25,52 +38,48 @@ edit and change the API token in provider.tf file
 terraform init
 ```
 
-##### 
-
-```execute-2
-cat ~/clustergroup.txt
-```
-
-```execute-1
-vi ~/terraform-tmc/provider-tmc.tf
-```
-
+```execute
 export TF_VAR_SESSION_NAMESPACE=$SESSION_NAMESPACE
-
-
-
-Create a cluster group
-
-```execute
-terraform plan
 ```
 
-```execute
-terraform apply -auto-approve
-```
-
-Create a workload cluster
+#### Create cluster group
 
 ```execute
-terraform plan
+terraform apply -target tanzu-mission-control_cluster_group.cluster_group_create_min_info -auto-approve
 ```
 
+##### Solution for above failure is, change the name in create-cg.tf from cluster_group_create_min_info to create_cluster_group
+
 ```execute
-terraform apply -auto-approve
+terraform apply -target tanzu-mission-control_cluster_group.create_cluster_group -auto-approve
 ```
+
+##### List the resources state
 
 ```execute
 terraform state list
 ```
 
-Delete cluster group
+##### Create workload cluster
 
 ```execute
-terraform destroy -target tanzu-mission-control_cluster_group.cluster_group_create_min_info
+terraform apply -target tanzu-mission-control_cluster.create_tkgs_workload
 ```
 
-Delete cluster
+##### Navigate to TMC Console to check the status of cluster creation
+
+```dashboard:open-url
+https://console.cloud.vmware.com/csp/gateway/discovery
+```
+
+##### Delete the cluster
 
 ```execute
-terraform destroy -target tanzu-mission-control_cluster_group.cluster_group_create_min_info
+terraform destroy -target tanzu-mission-control_cluster.create_tkgs_workload
+```
+
+##### Delete the cluster group
+
+```execute
+terraform destroy -target tanzu-mission-control_cluster_group.create_cluster_group
 ```
