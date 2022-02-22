@@ -5,7 +5,7 @@ Tanzu for Kubernetes operations simplifies operating Kubernetes for multi-cloud 
 #### A Short youtube video about TKO
 
 ```dashboard:open-url
-https://www.youtube.com/watch?v=kTvQOxnQ5kA
+url: https://www.youtube.com/watch?v=kTvQOxnQ5kA
 ```
 
 #### Workshop Objective
