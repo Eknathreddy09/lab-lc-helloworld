@@ -21,5 +21,5 @@ This workshop helps you to get some good understanding on below topics:
 For more info you can refer to: 
 
 ```dashboard:open-url
-url: http://captainvirtualization.com/deploy-management-cluster/
+url: https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.5/vmware-tanzu-kubernetes-grid-15/GUID-index.html
 ```
