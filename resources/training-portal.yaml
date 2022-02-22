@@ -7,7 +7,7 @@ spec:
     registration:
       type: one-step
       enabled: false
-    Credentials:
+    credentials:
       Admin:
         Password:  Newstart@1
         Username:  Admin
