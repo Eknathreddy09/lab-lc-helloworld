@@ -16,4 +16,5 @@ This demo will walk you through the important capabilities that are available in
 
 ##### Overview: 
 
-![Workshop overview](images/workshop-2.jpg)
+![Workshop overview](images/TKG-1.png)
+
