@@ -16,4 +16,4 @@ This demo will walk you through the important capabilities that are available in
 
 ##### Overview: 
 
-![Workshop overview](images/workshop-1.jpg)
+![Workshop overview](images/workshop-1.png)
