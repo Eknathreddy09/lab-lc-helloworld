@@ -8,7 +8,6 @@ modules:
     - exercises/02-tmc
     - exercises/03-tmc-packages
     - exercises/04-delete-packages
-    - exercises/05-cluster-create
     - exercises/06-cluster-delete
     - exercises/07-TMC-API
     - exercises/08-TMC-Terraform
