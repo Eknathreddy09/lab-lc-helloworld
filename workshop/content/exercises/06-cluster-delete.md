@@ -37,10 +37,6 @@ kubectl get pods -n vmware-system-tmc
 ```
 
 ```execute
-tmc cluster list
-```
-
-```execute
 tmc managementcluster list
 ```
 
@@ -53,6 +49,12 @@ tmc clustergroup list
 ```execute
 tanzu cluster delete {{ session_namespace }} -y
 ```
+
+```execute
+tanzu cluster list
+```
+
+##### Proceed further once the workload cluster is deleted completely
 
 #### Delete Management cluster using Tanzu CLI, should take few mins to complete
 
