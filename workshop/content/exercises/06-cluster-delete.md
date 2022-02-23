@@ -41,7 +41,7 @@ tmc cluster list
 ```
 
 ```execute
-tmc cluster management cluster list
+tmc managementcluster list
 ```
 
 ```execute
