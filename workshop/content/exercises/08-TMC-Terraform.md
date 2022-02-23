@@ -88,6 +88,8 @@ url: https://console.cloud.vmware.com/csp/gateway/discovery
 terraform destroy -target tanzu-mission-control_cluster.create_tkgs_workload -auto-approve
 ```
 
+![Application](images/Terraform-6.png)
+
 ##### Delete the cluster group
 
 ```execute
