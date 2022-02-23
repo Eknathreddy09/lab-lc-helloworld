@@ -38,6 +38,8 @@ vi provider.tf
 terraform init
 ```
 
+##### Export the variable
+
 ```execute
 export TF_VAR_SESSION_NAMESPACE=$SESSION_NAME
 ```
