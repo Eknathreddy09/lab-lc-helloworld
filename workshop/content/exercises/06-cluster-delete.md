@@ -59,7 +59,7 @@ tanzu cluster list
 #### Delete Management cluster using Tanzu CLI, should take few mins to complete
 
 ```execute
-tanzu mc delete -y
+tanzu mc delete -y ###### Can be deleted from JB itself due to docker pre req (Kind)
 ```
 
 #### Delete the localhost file
