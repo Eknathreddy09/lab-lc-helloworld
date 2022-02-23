@@ -13,8 +13,6 @@ modules:
         name: TMC Package Install
     exercises/04-delete-packages:
         name: TMC Delete packages
-    exercises/05-cluster-create:
-        name: TMC Cluster Create
     exercises/06-cluster-delete:
         name: TMC Cluster Delete
     exercises/07-TMC-API:
