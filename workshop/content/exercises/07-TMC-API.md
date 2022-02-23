@@ -1,7 +1,7 @@
-In this section, lets explore few rest API's. you can find complete list of API's ref in:
+In this section, lets explore few rest API's. you can find complete list of API's in:
 
 ```dashboard:open-url
-https://developer.vmware.com/apis/897/tanzu-mission-control
+url: https://developer.vmware.com/apis/897/tanzu-mission-control
 ```
 
 #### fetch API Token: 
@@ -26,7 +26,7 @@ echo $access_token
 #### Verify the access(Optional) using access token
 
 ```dashboard:open-url
-https://jwt.io/
+url: https://jwt.io/
 ```
 
 ##### Get the organization ID and account details 
@@ -38,7 +38,7 @@ curl -s --request POST --url https://console.cloud.vmware.com/csp/gateway/am/api
 ##### Get the cluster groups
 
 ```execute
-curl -v 'searchScope.name=*' https://partnertanzuseamericas.tmc.cloud.vmware.com/v1alpha1/clustergroups -H "Authorization: Bearer $access_token"
+curl -s 'searchScope.name=*' https://partnertanzuseamericas.tmc.cloud.vmware.com/v1alpha1/clustergroups -H "Authorization: Bearer $access_token" | jq '.clusterGroups[].fullName.name'
 ```
 
 ##### Get the clusters 
@@ -56,5 +56,5 @@ curl -s 'searchScope.name=*' https://partnertanzuseamericas.tmc.cloud.vmware.com
 ##### Delete the cluster group {{ session_namespace }}-cg that is created earlier: 
 
 ```execute
-curl -v 'searchScope.name=*' https://partnertanzuseamericas.tmc.cloud.vmware.com/v1alpha1/clustergroups -H "Authorization: Bearer $access_token"
+curl -X DELETE https://partnertanzuseamericas.tmc.cloud.vmware.com/v1alpha1/clustergroups/$SESSION_NAME-cg -H "Authorization: Bearer $access_token"
 ```
