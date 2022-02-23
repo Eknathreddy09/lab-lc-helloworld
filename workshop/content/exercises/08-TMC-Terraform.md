@@ -78,7 +78,7 @@ terraform apply -target tanzu-mission-control_cluster.create_tkgs_workload -auto
 url: https://console.cloud.vmware.com/csp/gateway/discovery
 ```
 
-![Application](images/terraform-5.png)
+![Application](images/Terraform-5.png)
 
 ##### Once completely deployed, execute below commands to delete the resources. 
 
