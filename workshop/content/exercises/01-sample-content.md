@@ -25,6 +25,19 @@ tanzu version
 ```execute
 tmc version
 ```
+
+#### Click here to check terraform CLI version
+
+```execute
+terraform --version
+```
+
+#### Click here to check AZ CLI version
+
+```execute
+az --version
+```
+
 ### Export session name as env variable
 
 ```execute-all
@@ -37,62 +50,77 @@ export SESSION_NAME={{ session_namespace }}
 source ~/script-session.sh
 ```
 
-# Preparing your setup, please wait for few mins. Continue further once you see the public ip on screen (Terminal-1)
+# Preparing your setup
+##### please wait for few mins. Continue further once you see the public ip on screen (Terminal-1)
 
-#### Connect to the VM to deploy a Management cluster
+#### Connect to deploy a Management cluster
 
 ```execute-2
 ssh -i id_rsa azureuser@<ipfromterminal1> -o StrictHostKeyChecking=accept-new
 ```
-Replace <ipfromterminal1> with IP shown in Terminal 1
+###### Replace <ipfromterminal1> with IP shown in Terminal 1
 
-## Deploy management cluster
+#### Deploy management cluster
 
 ```execute-2
 tanzu management-cluster create --ui --bind 0.0.0.0:8080
 ```
 
-### Replace ipcollectedfromterminal1 with IP shown in Terminal 1
+### Replace ipcollectedfromterminal1 with IP shown in Terminal 1 and select Azure in Installer page
 
 ```dashboard:open-url
 url: http://ipcollectedfromterminal1:8080
 ```
-
-Select Azure in Installer page
     
 ##### Azure details for management cluster creation can be found by executing this command: 
 
 ```execute
 cat /home/eduk8s/creds-tkg
 ```
-Copy and paste the values in Installer page opened in browser
+    
+#### Copy and paste the values in Installer page opened in browser
 
 ### Fill Iaas provider details as shown in creds-tkg file: 
 
-Resource Group: Create a new resource group and provide below provided name: 
-#### {{ session_namespace }}-RG
+Resource Group: Create a new resource group and provide below name: 
+    ##### {{ session_namespace }}-RG
+    
 Azure VNET Settings: 
-    Create a new VNET on Azure > from drop down select the newly created RG:
-#### {{ session_namespace }}-RG
+    
+Create a new VNET on Azure > from drop down select the newly created RG:
+    
+##### {{ session_namespace }}-RG
+    
 Provide VNET name as:
 #### {{ session_namespace }}-vnet
+    
 Control Plane subnet name : 
 #### {{ session_namespace }}-cp
+    
 Worker node subnet name: 
 #### {{ session_namespace }}-worker 
+    
 Management Cluster Settings: 
   Select Development 
 #### Instance Type: Standard_D2s_v3
+    
 Management Cluster Name: 
 ####    {{ session_namespace }}-mgmt
+    
 #### Worker Node Instance Type: Standard_D2s_v3
+    
 ###### Metadata: Leave to default and click NEXT
+    
 ###### Kubernetes Network: Leave to default and click NEXT
+    
 ###### Identity Management: disable "Enable Identity Management Settings" and click NEXT
+    
 ###### OS Image: from dropdown select Ubuntu-20.04
+    
 ###### CEIP Agreement: Leave to default and click NEXT
+    
 ###### Review Configuration and click on Deploy management cluster
-
+    
 ## Cluster creation takes about 15 mins
 
 #### Please wait till the management cluster is created ####
