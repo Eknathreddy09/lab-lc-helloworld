@@ -58,6 +58,7 @@ source ~/script-session.sh
 ```execute-2
 ssh -i id_rsa azureuser@<ipfromterminal1> -o StrictHostKeyChecking=accept-new
 ```
+Example:
 
 ![connect to JB](images/TKG-41.png)
 
@@ -69,13 +70,15 @@ ssh -i id_rsa azureuser@<ipfromterminal1> -o StrictHostKeyChecking=accept-new
 tanzu management-cluster create --ui --bind 0.0.0.0:8080
 ```
 
-![Installer](images/TKG-42.png)
-
 #### Replace ipcollectedfromterminal1 with IP shown in Terminal 1 and select Azure in Installer page
 
 ```dashboard:open-url
 url: http://ipcollectedfromterminal1:8080
 ```
+
+Example: 
+
+![Installer](images/TKG-42.png)
     
 ##### Azure details for management cluster creation can be found by executing this command: 
 
