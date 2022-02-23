@@ -25,8 +25,8 @@ select All Roles
 ```execute
 tmc login -n {{ session_namespace }} --no-configure
 ```
-Provide API Token
-Login context name - Press Enter
+###### Provide API Token
+###### Login context name - Press Enter
 
 ```execute
 tmc system context configure -l "log" -m {{ session_namespace }}-mgmt
