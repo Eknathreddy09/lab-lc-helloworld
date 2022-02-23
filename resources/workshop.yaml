@@ -11,7 +11,7 @@ spec:
   url: https://github.com/Eknathreddy09/lab-lc-helloworld
   content:
      files: github.com/Eknathreddy09/lab-lc-helloworld?ref=main
-     image: docker.io/eknath009/partnerse-vmware:newest
+     image: docker.io/eknath009/partnersedemo-vmware:new
   session:
     namespaces:
       budget: small
