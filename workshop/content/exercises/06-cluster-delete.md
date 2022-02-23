@@ -38,6 +38,7 @@ kubectl get pods -n vmware-system-tmc
 
 ```execute
 tmc cluster list
+```
 
 ```execute
 tmc cluster management cluster list
