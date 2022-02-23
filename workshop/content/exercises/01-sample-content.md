@@ -158,17 +158,14 @@ kubectl logs $podname -n capz-system -c manager -f
 ```execute-1
 tanzu cluster list
 ```
-#### Exit the Jumpbox Terminal
-
-```execute-2
-ctrl-c
-exit
-```
     
 #### Execute to terminate the Jumpbox
 ```execute-1
 az group delete -n {{ session_namespace }}-JB --yes
 ```
+###############
+#### Wait for delete operation to complete
+###############
 
 ##### Get credentials and export the config file
 ```execute
