@@ -1,4 +1,4 @@
-In this section, we will get some knowledge on TMC 
+In this section, Lets explore about TMC CLI by running some basic commands. 
 
 #### Follow the below steps to get API Token from TMC console
 
@@ -26,7 +26,7 @@ select All Roles
 tmc login -n {{ session_namespace }} --no-configure
 ```
 ###### Provide API Token
-###### Login context name - Press Enter
+###### Login context name(leave to default) - Press Enter
 
 ```execute
 tmc system context configure -l "log" -m {{ session_namespace }}-mgmt
@@ -56,7 +56,7 @@ tmc clustergroup list
 tmc managementcluster register {{ session_namespace }}-mgmt  -k ~/.kube/config -p TKG -c {{ session_namespace }}-cg
 ```
 
-##### Wait for the registration to complete
+##### Wait for the registration to complete, ETA: 2 mins
 
 ##### List the management clusters and verify if registered management cluster {{ session_namespace }}-mgmt is shown in the list
 
@@ -85,7 +85,7 @@ Navigate to TMC console > Administration > Management clusters > click on {{ ses
 url: https://console.cloud.vmware.com/csp/gateway/discovery
 ```
 
-##### Attach the workload cluster {{ session_namespace }} using TMC CLI
+##### Attach the workload cluster {{ session_namespace }} using TMC CLI, wait for the process to complete. 
 
 ```execute
 tmc cluster attach -g default -n {{ session_namespace }} -m {{ session_namespace }}-mgmt -p TKG --kubeconfig ~/.kube/config-tkg
