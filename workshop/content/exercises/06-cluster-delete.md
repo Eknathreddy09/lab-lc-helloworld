@@ -48,10 +48,6 @@ tmc cluster management cluster list
 tmc clustergroup list
 ```
 
-```execute
-tmc clustergroup delete
-```
-
 #### Delete workload cluster using Tanzu CLI, should take few mins to complete
 
 ```execute
