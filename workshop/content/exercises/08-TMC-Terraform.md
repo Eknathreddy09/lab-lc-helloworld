@@ -23,7 +23,7 @@ cat create-cg.tf
 ```
 
 ```execute
-cat create-cluster-tkgs.tf
+cat tkgs-create-cluster.tf
 ```
 
 ##### Edit and change the API token and org name in provider.tf file > Save
@@ -51,6 +51,10 @@ terraform apply -target tanzu-mission-control_cluster_group.cluster_group_create
 ##### Solution for above failure is, change the name in create-cg.tf from cluster_group_create_min_info to create_cluster_group
 
 ```execute
+vi create-cg.tf
+```
+
+```execute
 terraform apply -target tanzu-mission-control_cluster_group.create_cluster_group -auto-approve
 ```
 
@@ -60,17 +64,21 @@ terraform apply -target tanzu-mission-control_cluster_group.create_cluster_group
 terraform state list
 ```
 
-##### Create workload cluster
+##### Create workload cluster with name as {{ session_namespace }}-tf
 
 ```execute
-terraform apply -target tanzu-mission-control_cluster.create_tkgs_workload
+terraform apply -target tanzu-mission-control_cluster.create_tkgs_workload -auto-approve
 ```
 
-##### Navigate to TMC Console to check the status of cluster creation
+##### Navigate to TMC Console to check the status of cluster creation, which generally takes 5-10 mins to complete. 
 
 ```dashboard:open-url
-https://console.cloud.vmware.com/csp/gateway/discovery
+url: https://console.cloud.vmware.com/csp/gateway/discovery
 ```
+
+![Application](images/terraform-5.png)
+
+##### Once completely deployed, execute below commands to delete the resources. 
 
 ##### Delete the cluster
 
