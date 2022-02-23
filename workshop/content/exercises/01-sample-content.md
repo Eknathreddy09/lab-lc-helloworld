@@ -38,7 +38,7 @@ terraform --version
 az --version
 ```
 
-### Export session name as env variable
+#### Export session name as env variable
 
 ```execute-all
 export SESSION_NAME={{ session_namespace }}
@@ -58,7 +58,10 @@ source ~/script-session.sh
 ```execute-2
 ssh -i id_rsa azureuser@<ipfromterminal1> -o StrictHostKeyChecking=accept-new
 ```
-###### Replace <ipfromterminal1> with IP shown in Terminal 1
+
+![connect to JB](images/TKG-41.png)
+
+###### Replace "ipfromterminal1" with IP shown in Terminal 1
 
 #### Deploy management cluster
 
@@ -66,7 +69,9 @@ ssh -i id_rsa azureuser@<ipfromterminal1> -o StrictHostKeyChecking=accept-new
 tanzu management-cluster create --ui --bind 0.0.0.0:8080
 ```
 
-### Replace ipcollectedfromterminal1 with IP shown in Terminal 1 and select Azure in Installer page
+![Installer](images/TKG-42.png)
+
+#### Replace ipcollectedfromterminal1 with IP shown in Terminal 1 and select Azure in Installer page
 
 ```dashboard:open-url
 url: http://ipcollectedfromterminal1:8080
@@ -83,7 +88,7 @@ cat /home/eduk8s/creds-tkg
 ### Fill Iaas provider details as shown in creds-tkg file: 
 
 Resource Group: Create a new resource group and provide below name: 
-    ##### {{ session_namespace }}-RG
+##### {{ session_namespace }}-RG
     
 Azure VNET Settings: 
     
@@ -128,6 +133,8 @@ Management Cluster Name:
 
 ![Management Cluster](images/TKG-1.png)
 
+##### This script copies the config file into Terminal
+
 ```execute
 /bin/sh /home/eduk8s/script-session-tmc.sh
 ```
@@ -138,7 +145,7 @@ Management Cluster Name:
 kubectl config get-contexts
 ```
 
-##### Get Management cluster info
+##### Get Management cluster info, you can see both terminals has same output
     
 ```execute-all
 tanzu mc get
@@ -259,6 +266,12 @@ url: http://externalipcollectedabove:8080
 ############################################################
 
 ![Application](images/test-application.png)
+
+##### Delete the test application
+
+```execute
+kubectl delete ns test-application --kubeconfig /home/eduk8s/.kube/config-tkg
+```
 
 ##### Variable interpolation
 
