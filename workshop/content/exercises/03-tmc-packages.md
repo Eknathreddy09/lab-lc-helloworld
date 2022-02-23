@@ -1,4 +1,4 @@
-In this section, lets see the procedure to push packages(catalog) from TMC cli and console. 
+In this section, lets see the procedure to push packages(catalog) from TMC and console. 
 
 ```dashboard:open-url
 url: https://docs.vmware.com/en/VMware-Tanzu-Mission-Control/services/tanzumc-using/GUID-EF35646D-8762-41F1-95E5-D2F35ED71BA1.html
