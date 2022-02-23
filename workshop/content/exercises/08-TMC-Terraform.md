@@ -85,11 +85,11 @@ url: https://console.cloud.vmware.com/csp/gateway/discovery
 ##### Delete the cluster
 
 ```execute
-terraform destroy -target tanzu-mission-control_cluster.create_tkgs_workload
+terraform destroy -target tanzu-mission-control_cluster.create_tkgs_workload -auto-approve
 ```
 
 ##### Delete the cluster group
 
 ```execute
-terraform destroy -target tanzu-mission-control_cluster_group.create_cluster_group
+terraform destroy -target tanzu-mission-control_cluster_group.create_cluster_group -auto-approve
 ```
