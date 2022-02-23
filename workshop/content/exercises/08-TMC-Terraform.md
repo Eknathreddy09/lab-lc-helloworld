@@ -39,7 +39,7 @@ terraform init
 ```
 
 ```execute
-export TF_VAR_SESSION_NAMESPACE=$SESSION_NAMESPACE
+export TF_VAR_SESSION_NAMESPACE=$SESSION_NAME
 ```
 
 #### Create cluster group
