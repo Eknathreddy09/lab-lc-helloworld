@@ -1,7 +1,7 @@
 ################ Upgrade section in progress, but you can still try #######################
 
 In this workshop, TKG version used is v1.4.1
-For detailed of Installation procedure refer to official vmware doc. We have already installed the required CLI tools for this workshop. 
+For detailed Installation procedure refer to official vmware doc. We have already installed the required CLI tools for this workshop. 
 
 ```dashboard:open-url
 url: https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.4/vmware-tanzu-kubernetes-grid-14/GUID-index.html
