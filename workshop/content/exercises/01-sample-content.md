@@ -1,5 +1,4 @@
-################ Still in progress, but you can still try #######################
-Author: Eknath Reddy
+################ Upgrade section in progress, but you can still try #######################
 
 In this workshop, TKG version used is v1.4.1
 For detailed of Installation procedure refer to official vmware doc. We have already installed the required CLI tools for this workshop. 
