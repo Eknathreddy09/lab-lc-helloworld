@@ -199,7 +199,7 @@ tanzu cluster list
     
 #### Execute to terminate the Jumpbox
 ```execute-1
-az group delete -n {{ session_namespace }}-JB --yes
+az vm stop -n {{ session_namespace }} -g {{ session_namespace }}-JB
 ```
 ###############
 #### Wait for delete operation to complete
