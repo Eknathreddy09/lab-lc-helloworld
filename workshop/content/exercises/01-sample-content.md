@@ -91,6 +91,8 @@ cat /home/eduk8s/creds-tkg
 
 Resource Group: Create a new resource group and provide below name: 
 ##### {{ session_namespace }}-RG
+
+![Info IaaS Provider](images/TKG-mgmt-1.png)
     
 Azure VNET Settings: 
     
@@ -106,6 +108,8 @@ Control Plane subnet name :
     
 Worker node subnet name: 
 #### {{ session_namespace }}-worker 
+
+![Info VNET](images/TKG-mgmt-2.png)
     
 Management Cluster Settings: 
   Select Development 
@@ -115,18 +119,72 @@ Management Cluster Name:
 ####    {{ session_namespace }}-mgmt
     
 #### Worker Node Instance Type: Standard_D2s_v3
+
+![Info Cluster Settings](images/TKG-mgmt-3.png)
     
 ###### Metadata: Leave to default and click NEXT
     
 ###### Kubernetes Network: Leave to default and click NEXT
     
-###### Identity Management: disable "Enable Identity Management Settings" and click NEXT
+###### Identity Management: Enable Identity Management Settings > Select LDAPS
+
+###### LDAPS Endpoint: partnerdemo.captainvirtualization.in
+
+###### port: 636
+
+###### BIND DN (OPTIONAL) : cn=partnerse-admin,cn=Users,dc=partnerdemo,dc=captainvirtualization,dc=in
+
+###### BIND PASSWORD (OPTIONAL) : Welcome11!
+
+##### User Search Attributes
+
+###### BASE DN (OPTIONAL) : cn=Users,dc=partnerdemo,dc=captainvirtualization,dc=in
+
+###### FILTER (OPTIONAL) : (objectClass=User)
+
+###### USERNAME (OPTIONAL) : sAMAccountName
+
+##### Group Search Attributes
+
+###### BASE DN (OPTIONAL) : dc=partnerdemo,dc=captainvirtualization,dc=in
+
+###### FILTER (OPTIONAL) : (objectClass=group)
+
+###### NAME ATTRIBUTE (OPTIONAL) : cn
+
+###### USER ATTRIBUTE (OPTIONAL) : DN
+
+###### GROUP ATTRIBUTE (OPTIONAL) : member
+
+##### ROOT CA (OPTIONAL) 
+
+```execute-1
+cat ~/ldap-ca
+```
+
+![LDAPS](images/TKG-mgmt-4.png)
+
+##### VERIFY LDAP CONFIGURATION (OPTIONAL) : 
+
+###### verify LDAP configuration : In TEST USER NAME, use any of the below user to verify the load configuration
+
+![LDAPS](images/TKG-mgmt-8.png)
+
+###### Click START
+
+Expected result: 
+
+![LDAPS](images/TKG-mgmt-5.png)
     
 ###### OS Image: from dropdown select Ubuntu-20.04
+
+![OS Image](images/TKG-mgmt-6.png)
     
 ###### CEIP Agreement: Leave to default and click NEXT
     
 ###### Review Configuration and click on Deploy management cluster
+
+![OS Image](images/TKG-mgmt-7.png)
     
 ## Cluster creation takes about 15 mins
 
@@ -134,6 +192,32 @@ Management Cluster Name:
 #### Proceed further only once you see this on screen (terminal-2)
 
 ![Management Cluster](images/TKG-1.png)
+
+##### Check the contexts
+
+```execute-2
+kubectl config get-contexts
+```
+
+```execute-2
+kubectl get all -n pinniped-supervisor
+```
+
+Get a kubeconfig file for an LDAP user
+
+```execute-2
+tanzu management-cluster kubeconfig get --export-file /tmp/ldaps-tkg-mgmt-kubeconfig
+```
+
+Lets deliver the config file to a user which we can assume is using Terminal-1, lets copy the exported config from Terminal-2 (temporary JB) to Terminal-1
+
+```execute-1
+scp -i 
+```
+
+```execute-1
+cat ~/ldaps-tkg-mgmt-kubeconfig
+```
 
 ##### This script copies the config file into Terminal
 
