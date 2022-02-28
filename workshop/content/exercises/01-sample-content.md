@@ -55,13 +55,8 @@ source ~/script-session.sh
 #### Connect to deploy a Management cluster
 
 ```execute-2
-ssh -i id_rsa azureuser@<ipfromterminal1> -o StrictHostKeyChecking=accept-new
+ssh -i id_rsa azureuser@{{ session_namespace }}.centralindia.cloudapp.azure.com -o StrictHostKeyChecking=accept-new
 ```
-Example:
-
-![connect to JB](images/TKG-41.png)
-
-###### Replace "ipfromterminal1" with IP shown in Terminal 1
 
 #### Deploy management cluster
 
@@ -72,12 +67,8 @@ tanzu management-cluster create --ui --bind 0.0.0.0:8080
 #### Replace ipcollectedfromterminal1 with IP shown in Terminal 1 and select Azure in Installer page
 
 ```dashboard:open-url
-url: http://ipcollectedfromterminal1:8080
+url: http://{{ session_namespace }}.centralindia.cloudapp.azure.com:8080
 ```
-
-Example: 
-
-![Installer](images/TKG-42.png)
     
 ##### Azure details for management cluster creation can be found by executing this command: 
 
@@ -216,7 +207,7 @@ tanzu management-cluster kubeconfig get --export-file /tmp/ldaps-tkg-mgmt-kubeco
 Lets deliver the config file to a user which we can assume is using Terminal-1, lets copy the exported config from Terminal-2 (temporary JB) to Terminal-1
 
 ```execute-1
-scp -i ~/id_rsa azureuser@jumpboxhostname:/tmp/ldaps-tkg-mgmt-kubeconfig .
+scp -i ~/id_rsa azureuser@{{ session_namespace }}.centralindia.cloudapp.azure.com:/tmp/ldaps-tkg-mgmt-kubeconfig .
 ```
 
 ```execute-1
