@@ -140,7 +140,7 @@ Management Cluster Name:
 
 ###### BASE DN (OPTIONAL) : cn=Users,dc=partnerdemo,dc=captainvirtualization,dc=in
 
-###### FILTER (OPTIONAL) : (objectClass=User)
+###### FILTER (OPTIONAL) : (objectClass=Person)
 
 ###### USERNAME (OPTIONAL) : sAMAccountName
 
@@ -200,6 +200,10 @@ kubectl config get-contexts
 ```
 
 ```execute-2
+tanzu mc get
+```
+
+```execute-2
 kubectl get all -n pinniped-supervisor
 ```
 
@@ -212,43 +216,65 @@ tanzu management-cluster kubeconfig get --export-file /tmp/ldaps-tkg-mgmt-kubeco
 Lets deliver the config file to a user which we can assume is using Terminal-1, lets copy the exported config from Terminal-2 (temporary JB) to Terminal-1
 
 ```execute-1
-scp -i 
+scp -i ~/id_rsa azureuser@jumpboxhostname:/tmp/ldaps-tkg-mgmt-kubeconfig .
 ```
 
 ```execute-1
 cat ~/ldaps-tkg-mgmt-kubeconfig
 ```
 
+##### In below clusterrolebinding file, provide the username that you wish to authenticate. For ex: replace username@partnerdemo.captainvirtualization.in with partner-user6@parterdemo.captainvirtualization.in
+
+```execute-1
+vi ~/clusterrolebinding.yaml
+```
+
+```execute-1
+kubectl apply -f ~/clusterrolebinding.yaml
+```
+
+```execute-1
+vm stop command
+```
+
+
+```execute-1
+kubectl --kubeconfig=~/ldaps-tkg-mgmt-kubeconfig get nodes
+```
+
+![Management Cluster](images/TKG-mgmt-15.png)
+
+###### The login URL is displayed in terminal-1. copy the url and paste in local browser, provide any of the credentials as mentioned below: 
+
+![Credentials](images/TKG-mgmt-8.png)
+
+##### LDAP Username: <ldap user name as given in above credentials screenshot>@partnerdemo.captainvirtualization.in
+##### Password: <Password as given in above credentials screenshot >
+
+###### Ref Screenshots: 
+
+![Management Cluster](images/TKG-mgmt-16.png)
+    
+![Management Cluster](images/TKG-mgmt-17.png)
+    
+##### Run curl command in Terminal-2 with the url that is copied earlier
+
+```execute-2
+curl -L "paste the url copied earlier that starts with http://127.0.0.1/"
+```
+    
 ##### This script copies the config file into Terminal
 
 ```execute
-/bin/sh /home/eduk8s/script-session-tmc.sh
+/bin/sh /home/eduk8s/script-session-tmc.sh. #### To be modified 
 ```
 
-##### Click to check all contexts in management cluster
+##### Verify the context
     
-```execute-2
-kubectl config get-contexts
+```execute-1
+kubectl config get-contexts --kubeconfig ~/ldaps-tkg-mgmt-kubeconfig
 ```
-
-##### Get Management cluster info, you can see both terminals has same output
     
-```execute-all
-tanzu mc get
-```
-
-##### Click to check the Nodes
-
-```execute-all
-kubectl get nodes
-```
-
-##### Click to check the pods in all namespaces of management cluster
-
-```execute-all
-kubectl get pods -A 
-```
-
 ##### Read the config file to understand the variables defined for Tanzu Kubernetes cluster which will be deployed shortly
 
 ```execute-1
