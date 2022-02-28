@@ -233,10 +233,11 @@ vi ~/clusterrolebinding.yaml
 kubectl apply -f ~/clusterrolebinding.yaml
 ```
 
-```execute-1
-vm stop command
-```
+#### Execute to terminate the Jumpbox
 
+```execute-1
+az vm stop -n {{ session_namespace }} -g {{ session_namespace }}-JB
+```
 
 ```execute-1
 kubectl --kubeconfig=~/ldaps-tkg-mgmt-kubeconfig get nodes
@@ -305,11 +306,7 @@ kubectl logs $podname -n capz-system -c manager -f
 ```execute-1
 tanzu cluster list
 ```
-    
-#### Execute to terminate the Jumpbox
-```execute-1
-az vm stop -n {{ session_namespace }} -g {{ session_namespace }}-JB
-```
+
 ###############
 #### Wait for delete operation to complete
 ###############
@@ -357,6 +354,7 @@ kubectl create deployment spring-deploy --port=8080 --image=eknath009/tbs-spring
 ```
     
 ##### Expose the deployment 
+    
 ```execute
 kubectl expose deployment spring-deploy --port=8080 --type=LoadBalancer -n test-application --kubeconfig /home/eduk8s/.kube/config-tkg
 ```
