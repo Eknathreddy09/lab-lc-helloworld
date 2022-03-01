@@ -153,8 +153,6 @@ Management Cluster Name:
 cat ~/ldap-ca
 ```
 
-![LDAPS](images/TKG-mgmt-4.png)
-
 ##### VERIFY LDAP CONFIGURATION (OPTIONAL) : 
 
 ###### verify LDAP configuration : In TEST USER NAME, use any of the below user to verify the load configuration
