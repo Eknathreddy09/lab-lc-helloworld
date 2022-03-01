@@ -133,7 +133,7 @@ Management Cluster Name:
 
 ###### FILTER (OPTIONAL) : (objectClass=Person)
 
-###### USERNAME (OPTIONAL) : sAMAccountName
+###### USERNAME (OPTIONAL) : userPrincipalName
 
 ##### Group Search Attributes
 
@@ -204,23 +204,23 @@ Get a kubeconfig file for an LDAP user
 tanzu management-cluster kubeconfig get --export-file /tmp/ldaps-tkg-mgmt-kubeconfig
 ```
 
-Lets deliver the config file to a user which we can assume is using Terminal-1, lets copy the exported config from Terminal-2 (temporary JB) to Terminal-1
+Lets deliver the config file to a user which we assume is using Terminal-1, lets copy the exported config from Terminal-2 (temporary JB) to Terminal-1
 
 ```execute-1
-scp -i ~/id_rsa azureuser@{{ session_namespace }}.centralindia.cloudapp.azure.com:/tmp/ldaps-tkg-mgmt-kubeconfig .
+scp -i ~/id_rsa -o StrictHostKeyChecking=accept-new azureuser@{{ session_namespace }}.centralindia.cloudapp.azure.com:/tmp/ldaps-tkg-mgmt-kubeconfig .
 ```
 
 ```execute-1
 cat ~/ldaps-tkg-mgmt-kubeconfig
 ```
 
-##### In below clusterrolebinding file, provide the username that you wish to authenticate. For ex: replace username@partnerdemo.captainvirtualization.in with partner-user6@parterdemo.captainvirtualization.in
+##### In below clusterrolebinding file, provide the username that you wish to authenticate. Usernames can be anything between partnerse-user1 to partnerse-user14 For ex: replace username@partnerdemo.captainvirtualization.in with partner-user6@parterdemo.captainvirtualization.in
 
-```execute-1
+```execute-2
 vi ~/clusterrolebinding.yaml
 ```
 
-```execute-1
+```execute-2
 kubectl apply -f ~/clusterrolebinding.yaml
 ```
 
@@ -240,8 +240,8 @@ kubectl --kubeconfig=~/ldaps-tkg-mgmt-kubeconfig get nodes
 
 ![Credentials](images/TKG-mgmt-8.png)
 
-##### LDAP Username: <ldap user name as given in above credentials screenshot>@partnerdemo.captainvirtualization.in
-##### Password: <Password as given in above credentials screenshot >
+##### LDAP Username: "ldap user name as given in clusterrolebinding.yaml file"@partnerdemo.captainvirtualization.in
+##### Password: "Password as given in above credentials screenshot"
 
 ###### Ref Screenshots: 
 
@@ -254,19 +254,40 @@ kubectl --kubeconfig=~/ldaps-tkg-mgmt-kubeconfig get nodes
 ```execute-2
 curl -L "paste the url copied earlier that starts with http://127.0.0.1/"
 ```
+##### Expected result: you have been logged in and may now close this tab
     
-##### This script copies the config file into Terminal
+##### This script copies the config file into .kube  directory
 
-```execute
-/bin/sh /home/eduk8s/script-session-tmc.sh. #### To be modified 
+```execute-1
+cp ldaps-tkg-mgmt-kubeconfig ~/.kube/config
 ```
 
-##### Verify the context
+###### Tanzu login
+
+```execute-1
+tanzu login --kubeconfig ~/.kube/config --context tanzu-cli-{{ session_namespace }}-mgmt@{{ session_namespace }}-mgmt --name tanzu-cli-{{ session_namespace }}-mgmt
+```    
+
+##### Set the context
+
+```execute-1
+kubectl config use-context tanzu-cli-{{ session_namespace }}-mgmt@{{ session_namespace }}-mgmt
+```
+
+##### Verify the context and it shouldn't be admin
     
 ```execute-1
-kubectl config get-contexts --kubeconfig ~/ldaps-tkg-mgmt-kubeconfig
+kubectl config get-contexts
 ```
-    
+
+```execute-1
+kubectl get nodes
+```
+
+```execute-1
+kubectl get pods -A
+```
+
 ##### Read the config file to understand the variables defined for Tanzu Kubernetes cluster which will be deployed shortly
 
 ```execute-1
