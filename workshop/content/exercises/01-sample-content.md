@@ -198,13 +198,17 @@ tanzu mc get
 kubectl get all -n pinniped-supervisor
 ```
 
-Get a kubeconfig file for an LDAP user
+```execute-2
+kubectl get all -n tanzu-system-auth
+```
+
+##### Generate a kubeconfig file
 
 ```execute-2
 tanzu management-cluster kubeconfig get --export-file /tmp/ldaps-tkg-mgmt-kubeconfig
 ```
 
-Lets deliver the config file to a user which we assume is using Terminal-1, lets copy the exported config from Terminal-2 (temporary JB) to Terminal-1
+##### Lets deliver the config file to a user which we assume is using Terminal-1, lets copy the exported config from Terminal-2 (temporary JB) to Terminal-1
 
 ```execute-1
 scp -i ~/id_rsa -o StrictHostKeyChecking=accept-new azureuser@{{ session_namespace }}.centralindia.cloudapp.azure.com:/tmp/ldaps-tkg-mgmt-kubeconfig .
