@@ -102,8 +102,3 @@ Navigate to TMC console > Clusters > {{ session_namespace }}
 
 ![Workload cluster After Upgrade](images/TKG-upgrade-4.png)
 
-###### Terminate the Jumpbox
-
-```execute-1
-az group delete -n {{ session_namespace }}-JB --yes
-```
