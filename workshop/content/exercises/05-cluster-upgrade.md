@@ -1,5 +1,7 @@
 ## In this section, lets upgrade the deployed Management and workload clusters to 1.5.1
 
+lets do the prechecks before starting with cluster upgrade. 
+
 Navigate to TMC console > Administration > Management clusters {{ session_namespace }}-mgmt
 
 ![Mgmt cluster before Upgrade](images/TMC-40.png)
