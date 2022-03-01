@@ -88,7 +88,7 @@ url: https://console.cloud.vmware.com/csp/gateway/discovery
 ##### Attach the workload cluster {{ session_namespace }} using TMC CLI, wait for the process to complete. 
 
 ```execute
-tmc cluster attach -g default -n {{ session_namespace }} -m {{ session_namespace }}-mgmt -p TKG --kubeconfig ~/.kube/config-tkg
+tmc cluster attach -g {{ session_namespace }}-cg -n {{ session_namespace }} -m {{ session_namespace }}-mgmt -p TKG --kubeconfig ~/.kube/config-tkg
 ```
 
 Navigate to  TMC console > Clusters > click on clustername {{ session_namespace }}
