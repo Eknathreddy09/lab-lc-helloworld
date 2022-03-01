@@ -46,11 +46,11 @@ tmc clustergroup list
 
 #### Delete workload cluster using Tanzu CLI, should take few mins to complete
 
-```execute
+```execute-2
 tanzu cluster delete {{ session_namespace }} -y
 ```
 
-```execute
+```execute-2
 tanzu cluster list
 ```
 
@@ -58,8 +58,14 @@ tanzu cluster list
 
 #### Delete Management cluster using Tanzu CLI, should take few mins to complete
 
-```execute
-tanzu mc delete -y ###### Can be deleted from JB itself due to docker pre req (Kind)
+```execute-2
+tanzu mc delete -y
+```
+
+###### Terminate the Jumpbox
+
+```execute-1
+az group delete -n {{ session_namespace }}-JB --yes
 ```
 
 #### Delete the localhost file
