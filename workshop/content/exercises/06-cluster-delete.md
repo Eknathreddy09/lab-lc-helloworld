@@ -4,11 +4,15 @@
 
 ###### Navigate to TMC console > Clusters > select the cluster {{ session_namespace }} > Actions (can be located in top right corner) > Detach 
 
+###### Example: 
+
 ![Application](images/TMC-26.png)
 
 ###### Provide name: {{ session_namespace }}
 
 DETACH
+
+###### Example: 
 
 ![Application](images/TMC-27.png)
 
@@ -22,11 +26,15 @@ kubectl get pods -n vmware-system-tmc --kubeconfig ~/.kube/config-tkg
 
 ###### Navigate to TMC console > Administration > Management clusters > click on {{ session_namespace }}-mgmt > Actions (can be located in top right corner) > Deregister 
 
+###### Example: 
+
 ![Application](images/TMC-28.png)
 
 ###### Provide name: {{ session_namespace }}-mgmt
 
 DEREGISTER
+
+###### Example: 
 
 ![Application](images/TMC-29.png)
 
@@ -35,6 +43,8 @@ DEREGISTER
 ```execute
 kubectl get pods -n vmware-system-tmc
 ```
+
+##### List the management clusters and {{ session_namespace }}-mgmt should be missing
 
 ```execute
 tmc managementcluster list
