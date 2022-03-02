@@ -67,7 +67,7 @@ terraform apply -target tanzu-mission-control_cluster.create_tkgs_workload -auto
 ```dashboard:open-url
 url: https://console.cloud.vmware.com/csp/gateway/discovery
 ```
-
+###### Example: 
 ![Application](images/Terraform-5.png)
 
 ##### Once completely deployed, execute below commands to delete the resources. 
@@ -77,7 +77,7 @@ url: https://console.cloud.vmware.com/csp/gateway/discovery
 ```execute
 terraform destroy -target tanzu-mission-control_cluster.create_tkgs_workload -auto-approve
 ```
-
+###### Example: 
 ![Application](images/Terraform-6.png)
 
 ##### Delete the cluster group
