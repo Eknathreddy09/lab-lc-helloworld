@@ -1,70 +1,69 @@
-################ Upgrade section in progress, but you can still try #######################
-
 In this workshop, TKG version used is v1.4.1
-For detailed Installation procedure refer to official vmware doc. We have already installed the required CLI tools for this workshop. 
+For detailed Installation procedure, refer to official vmware doc. We have already installed the required CLI tools for this workshop. 
 
 ```dashboard:open-url
 url: https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.4/vmware-tanzu-kubernetes-grid-14/GUID-index.html
 ```
 
-#### Click text to Hello world (with target)
+##### Click text to Hello world (with target)
 
 ```execute-1
 echo "Hello, Welcome to Partner workshop session"
 ```
 
-#### Click here to check Tanzu version
+##### Click here to check Tanzu version
 
 ```execute
 tanzu version
 ```
 
-#### Click here to check TMC CLI version
+##### Click here to check TMC CLI version
 
 ```execute
 tmc version
 ```
 
-#### Click here to check terraform CLI version
+##### Click here to check terraform CLI version
 
 ```execute
 terraform --version
 ```
 
-#### Click here to check AZ CLI version
+##### Click here to check AZ CLI version
 
 ```execute
 az --version
 ```
 
-#### Export session name as env variable
+##### Export session name as env variable
 
 ```execute-all
 export SESSION_NAME={{ session_namespace }}
 ```
 
-#### Set up the environment
+##### Set up the environment
 
 ```execute-1
 source ~/script-session.sh
 ```
 
-# Preparing your setup
+## Preparing your setup
+
 ##### please wait for 3-5 mins. Continue once the ongoing task is completed in Terminal-1. 
 
-#### Connect to deploy a Management cluster
+##### Connect to deploy a Management cluster
 
 ```execute-2
 ssh -i id_rsa azureuser@{{ session_namespace }}.centralindia.cloudapp.azure.com -o StrictHostKeyChecking=accept-new
 ```
 
-#### Deploy management cluster
+##### Deploy management cluster
 
 ```execute-2
 tanzu management-cluster create --ui --bind 0.0.0.0:8080
 ```
 
-#### Access below url and select Azure in Installer page
+##### Access below url and select Azure in Installer page
 
 ```dashboard:open-url
 url: http://{{ session_namespace }}.centralindia.cloudapp.azure.com:8080
@@ -76,14 +75,15 @@ url: http://{{ session_namespace }}.centralindia.cloudapp.azure.com:8080
 cat /home/eduk8s/creds-tkg
 ```
     
-#### Copy and paste the values in Installer page opened in browser
+##### Copy and paste the values in Installer page opened in browser
 
-### Fill Iaas provider details as shown in creds-tkg file: 
+##### Fill Iaas provider details as shown in creds-tkg file: 
 
 ###### Region: West US 2
 
 Resource Group: Create a new resource group and provide below name: 
-##### {{ session_namespace }}-RG
+
+###### {{ session_namespace }}-RG
 
 ![Info IaaS Provider](images/TKG-mgmt-1.png)
     
@@ -91,27 +91,28 @@ Azure VNET Settings:
     
 Create a new VNET on Azure > from drop down select the newly created RG:
     
-##### {{ session_namespace }}-RG
+###### {{ session_namespace }}-RG
     
 Provide VNET name as:
-#### {{ session_namespace }}-vnet
+###### {{ session_namespace }}-vnet
     
 Control Plane subnet name : 
-#### {{ session_namespace }}-cp
+###### {{ session_namespace }}-cp
     
 Worker node subnet name: 
-#### {{ session_namespace }}-worker 
+###### {{ session_namespace }}-worker 
 
 ![Info VNET](images/TKG-mgmt-2.png)
     
 Management Cluster Settings: 
   Select Development 
-#### Instance Type: Standard_D2s_v3
+  
+###### Instance Type: Standard_D2s_v3
     
 Management Cluster Name: 
-####    {{ session_namespace }}-mgmt
+######    {{ session_namespace }}-mgmt
     
-#### Worker Node Instance Type: Standard_D2s_v3
+###### Worker Node Instance Type: Standard_D2s_v3
 
 ![Info Cluster Settings](images/TKG-mgmt-3.png)
     
@@ -177,7 +178,7 @@ Expected result:
 
 ![OS Image](images/TKG-mgmt-7.png)
     
-## Cluster creation takes about 15 mins
+### Cluster creation takes about 15 mins
 
 #### Please wait till the management cluster is created ####
 #### Proceed further only once you see this on screen (terminal-2)
@@ -190,17 +191,25 @@ Expected result:
 kubectl config get-contexts
 ```
 
+##### Check the management cluster info
+
 ```execute-2
 tanzu mc get
 ```
+
+##### Check resources in pinniped-supervisor namespace
 
 ```execute-2
 kubectl get all -n pinniped-supervisor
 ```
 
+##### Check resources in tanzu-system-auth namespace
+
 ```execute-2
 kubectl get all -n tanzu-system-auth
 ```
+
+##### Export the variable
 
 ```execute-2
 export TANZU_CLI_PINNIPED_AUTH_LOGIN_SKIP_BROWSER=true
@@ -218,6 +227,8 @@ tanzu management-cluster kubeconfig get --export-file /tmp/ldaps-tkg-mgmt-kubeco
 scp -i ~/id_rsa -o StrictHostKeyChecking=accept-new azureuser@{{ session_namespace }}.centralindia.cloudapp.azure.com:/tmp/ldaps-tkg-mgmt-kubeconfig .
 ```
 
+##### Read the generated config file
+
 ```execute-1
 cat ~/ldaps-tkg-mgmt-kubeconfig
 ```
@@ -227,6 +238,8 @@ cat ~/ldaps-tkg-mgmt-kubeconfig
 ```execute-2
 vi ~/clusterrolebinding.yaml
 ```
+
+##### Create cluster role binding as admin 
 
 ```execute-2
 kubectl apply -f ~/clusterrolebinding.yaml
@@ -263,7 +276,7 @@ kubectl --kubeconfig=ldaps-tkg-mgmt-kubeconfig get nodes
     
 ##### Run curl command in Terminal-2 with the url that is copied earlier
 
-```execute-2
+```copy-and-edit
 curl -L "paste the url copied earlier that starts with http://127.0.0.1/"
 ```
 ##### Expected result: you have been logged in and may now close this tab
@@ -291,6 +304,8 @@ kubectl config use-context tanzu-cli-{{ session_namespace }}-mgmt@{{ session_nam
 ```execute-1
 kubectl config get-contexts
 ```
+
+##### After successful login as LDAP user, you should see the output of below commands. 
 
 ```execute-1
 kubectl get nodes
@@ -325,6 +340,10 @@ kubectl logs $podname -n capz-system -c manager -f
 ###########################################################
 #### Wait for the cluster to get created ##################
 ###########################################################
+
+```execute-2
+<ctrl+c>
+```
 
 ##### Proceed further only once you see this on screen (terminal-1)
 ![Workload Cluster](images/TKG-2.png)
