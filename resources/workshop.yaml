@@ -3,8 +3,8 @@ kind: Workshop
 metadata:
   name: lab-lc-helloworld
 spec:
-  title: Hello, Welcome to TKO Workshop
-  description: Workshop created to demo the TKG cluster creation using different methods.
+  title: Partner Demo Workshop - Module 1
+  description: Workshop created to demo the TKG cluster lifecycle and overview on TMC command line tools.
   vendor: eduk8s.io
   difficulty: beginner
   duration: 15m
