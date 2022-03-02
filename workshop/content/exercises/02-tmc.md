@@ -1,4 +1,4 @@
-In this section, Lets explore about TMC CLI by running some basic commands. 
+In this section, Lets explore about TMC CLI by running some basic operations. 
 
 #### Follow the below steps to get API Token from TMC console
 
@@ -32,7 +32,7 @@ tmc login -n {{ session_namespace }} --no-configure
 tmc system context configure -l "log" -m {{ session_namespace }}-mgmt
 ```
 
-#### List the available management cluster
+##### List the available management cluster
 
 ```execute
 tmc managementcluster list
@@ -77,7 +77,7 @@ kubectl get all -n vmware-system-tmc
 tmc managementcluster get {{ session_namespace }}-mgmt
 ```
 
-##### Check in TMC Console
+##### Check in TMC Console to know the status of management cluster
 
 Navigate to TMC console > Administration > Management clusters > click on {{ session_namespace }}-mgmt
 
@@ -90,6 +90,8 @@ url: https://console.cloud.vmware.com/csp/gateway/discovery
 ```execute
 tmc cluster attach -g {{ session_namespace }}-cg -n {{ session_namespace }} -m {{ session_namespace }}-mgmt -p TKG --kubeconfig ~/.kube/config-tkg
 ```
+
+##### Check in TMC Console to know the status of attached workload cluster
 
 Navigate to  TMC console > Clusters > click on clustername {{ session_namespace }}
 
