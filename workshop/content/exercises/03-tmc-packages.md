@@ -110,6 +110,8 @@ kubectl get svc -n tanzu-system-ingress --kubeconfig ~/.kube/config-tkg
 url: https://{{ session_namespace }}.captainvirtualization.in/
 ```
 
-Enter the credentials: admin, Newstart@1
+##### Enter the credentials: admin, Newstart@1
+
+## Example: 
 
 ![TMC Cluster console](images/TMC-20.png)
