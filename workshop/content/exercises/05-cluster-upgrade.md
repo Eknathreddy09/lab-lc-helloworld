@@ -1,12 +1,16 @@
 ## In this section, lets upgrade the deployed Management and workload clusters to 1.5.1
 
-lets do the prechecks before starting with cluster upgrade. 
+###### lets do the prechecks before starting with cluster upgrade. 
 
 Navigate to TMC console > Administration > Management clusters {{ session_namespace }}-mgmt
+
+###### Node the version as shown here: 
 
 ![Mgmt cluster before Upgrade](images/TMC-40.png)
 
 Navigate to TMC console > Clusters > click on clustername {{ session_namespace }}
+
+###### Node the version as shown here: 
 
 ![Workload cluster After Upgrade](images/TMC-41.png)
 
@@ -40,7 +44,7 @@ tanzu version
 kubectl version
 ```
 
-###### Check the current contexts
+###### Check the current context
 
 ```execute-2
 kubectl config get-contexts
@@ -58,6 +62,7 @@ tanzu management-cluster upgrade {{ session_namespace }}-mgmt --os-name ubuntu -
 
 ##### Once the management cluster is upgraded: 
 
+###### Example: 
 ![Mgmt cluster After Upgrade](images/TKG-upgrade-1.png)
 
 Navigate to TMC console > Administration > Management clusters {{ session_namespace }}-mgmt
@@ -94,8 +99,9 @@ tanzu cluster upgrade {{ session_namespace }} -y
 tanzu cluster list --include-management-cluster
 ```
 
-##### Once the management cluster is upgraded: 
+##### Once the workload cluster is upgraded: 
 
+###### Example: 
 ![Workload cluster After Upgrade](images/TKG-upgrade-3.png)
 
 Navigate to TMC console > Clusters > {{ session_namespace }}
