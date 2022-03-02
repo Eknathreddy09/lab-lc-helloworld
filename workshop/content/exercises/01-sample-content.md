@@ -236,7 +236,7 @@ kubectl apply -f ~/clusterrolebinding.yaml
 cat clusterrolebinding.yaml
 ```
 
-#### Execute to terminate the Jumpbox
+#### Stop the Jumpbox
 
 ```execute-1
 az vm stop -n {{ session_namespace }} -g {{ session_namespace }}-JB
@@ -315,6 +315,7 @@ tanzu cluster create {{ session_namespace }} -f /home/eduk8s/wc-config.yaml
 ##### Now the cluster is deployed using LDAP user. 
 
 Meanwhile you can check the cluster creation logs in Terminal 2
+
 ##### Click here to check the progress of workload creation from logs
 
 ```execute-2
@@ -332,10 +333,6 @@ kubectl logs $podname -n capz-system -c manager -f
 ```execute-1
 tanzu cluster list
 ```
-
-###############
-#### Wait for delete operation to complete
-###############
 
 ##### Get credentials and export the config file
 ```execute
