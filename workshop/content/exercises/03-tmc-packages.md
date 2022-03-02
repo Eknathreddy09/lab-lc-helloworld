@@ -107,7 +107,7 @@ kubectl get svc -n tanzu-system-ingress --kubeconfig ~/.kube/config-tkg
 ![local host file entry example](images/TMC-21.png)
 
 ```dashboard:open-url
-https://{{ session_namespace }}.captainvirtualization.in/
+url: https://{{ session_namespace }}.captainvirtualization.in/
 ```
 
 Enter the credentials: admin, Newstart@1
