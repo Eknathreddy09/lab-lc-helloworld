@@ -222,7 +222,7 @@ scp -i ~/id_rsa -o StrictHostKeyChecking=accept-new azureuser@{{ session_namespa
 cat ~/ldaps-tkg-mgmt-kubeconfig
 ```
 
-##### In below clusterrolebinding file, provide the username that you wish to authenticate. Usernames can be anything between partnerse-user1 to partnerse-user14 For ex: replace username@partnerdemo.captainvirtualization.in with partner-user6@parterdemo.captainvirtualization.in
+##### In below clusterrolebinding file, provide the username that you wish to authenticate. Usernames can be anything between partnerse-user1 to partnerse-user14 For ex: replace username@partnerdemo.captainvirtualization.in with partnerse-user6@parterdemo.captainvirtualization.in
 
 ```execute-2
 vi ~/clusterrolebinding.yaml
