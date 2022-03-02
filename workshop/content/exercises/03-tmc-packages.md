@@ -54,8 +54,6 @@ cat ~/contour.yaml
 
 ![TMC Cluster console](images/TMC-13.png) 
 
-Leave to Default and click NEXT
-
 Install Package
 
 Navigate to TMC console > Catalog > Installed > check if the package (cert-manager.tanzu.vmware.com) is succeeded and healthy
