@@ -202,6 +202,10 @@ kubectl get all -n pinniped-supervisor
 kubectl get all -n tanzu-system-auth
 ```
 
+```execute-2
+export TANZU_CLI_PINNIPED_AUTH_LOGIN_SKIP_BROWSER=true
+```
+
 ##### Generate a kubeconfig file
 
 ```execute-2
@@ -235,12 +239,12 @@ az vm stop -n {{ session_namespace }} -g {{ session_namespace }}-JB
 ```
 
 ```execute-1
-kubectl --kubeconfig=~/ldaps-tkg-mgmt-kubeconfig get nodes
+kubectl --kubeconfig=ldaps-tkg-mgmt-kubeconfig get nodes
 ```
 
 ![Management Cluster](images/TKG-mgmt-15.png)
 
-###### The login URL is displayed in terminal-1. copy the url and paste in local browser, provide any of the credentials as mentioned below: 
+###### The login URL is displayed in terminal-1. copy the url and paste in local browser. 
 
 ![Credentials](images/TKG-mgmt-8.png)
 
