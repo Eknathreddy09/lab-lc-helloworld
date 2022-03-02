@@ -47,16 +47,6 @@ export TF_VAR_SESSION_NAMESPACE=$SESSION_NAME
 #### Create cluster group
 
 ```execute
-terraform apply -target tanzu-mission-control_cluster_group.cluster_group_create_min_info -auto-approve
-```
-
-##### Solution for above failure is, change the name in create-cg.tf from cluster_group_create_min_info to create_cluster_group
-
-```execute
-vi create-cg.tf
-```
-
-```execute
 terraform apply -target tanzu-mission-control_cluster_group.create_cluster_group -auto-approve
 ```
 
