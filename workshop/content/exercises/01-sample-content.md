@@ -50,7 +50,7 @@ source ~/script-session.sh
 ```
 
 # Preparing your setup
-##### please wait for few mins. Continue further once you see the public ip on screen (Terminal-1)
+##### please wait for 3-5 mins. Continue once the ongoing task is completed in Terminal-1. 
 
 #### Connect to deploy a Management cluster
 
@@ -64,7 +64,7 @@ ssh -i id_rsa azureuser@{{ session_namespace }}.centralindia.cloudapp.azure.com 
 tanzu management-cluster create --ui --bind 0.0.0.0:8080
 ```
 
-#### Replace ipcollectedfromterminal1 with IP shown in Terminal 1 and select Azure in Installer page
+#### Access below url and select Azure in Installer page
 
 ```dashboard:open-url
 url: http://{{ session_namespace }}.centralindia.cloudapp.azure.com:8080
@@ -79,6 +79,8 @@ cat /home/eduk8s/creds-tkg
 #### Copy and paste the values in Installer page opened in browser
 
 ### Fill Iaas provider details as shown in creds-tkg file: 
+
+###### Region: West US 2
 
 Resource Group: Create a new resource group and provide below name: 
 ##### {{ session_namespace }}-RG
@@ -150,7 +152,7 @@ Management Cluster Name:
 ##### ROOT CA (OPTIONAL) 
 
 ```execute-1
-cat ~/ldap-ca
+cat ~/ldap-ca.pem
 ```
 
 ##### VERIFY LDAP CONFIGURATION (OPTIONAL) : 
