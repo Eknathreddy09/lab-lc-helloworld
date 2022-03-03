@@ -75,7 +75,7 @@ tanzu mc delete -y
 ###### Terminate the Jumpbox
 
 ```execute-1
-az group delete -n {{ session_namespace }}-JB --yes
+jbdelete=$(az group delete -n {{ session_namespace }}-JB --yes)
 ```
 
 #### Delete the localhost file
