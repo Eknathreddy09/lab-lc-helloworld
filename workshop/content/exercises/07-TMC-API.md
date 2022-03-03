@@ -6,11 +6,15 @@ url: https://developer.vmware.com/apis/897/tanzu-mission-control
 
 #### fetch API Token: 
 
-###### Replace <replace me with TMC API Token> with API Token collected in TMC section 
+###### Replace: replace me with TMC API Token> with API Token collected in TMC section 
 
-```execute
+```copy-and-edit
 refresh_token=<replace me with TMC API Token>
 ```
+###### Note: In Terminal-1, just right click and paste to edit above curl command 
+
+![TMC Token](images/TMC-token.png)
+  
 ##### Generate Access token from above Refresh Token
 
 ```execute
@@ -28,6 +32,8 @@ echo $access_token
 ```dashboard:open-url
 url: https://jwt.io/
 ```
+
+![TMC Token JWT](images/TMC-token2.png)
 
 ##### Get the organization ID and account details 
 
@@ -57,4 +63,11 @@ curl -s 'searchScope.name=*' https://partnertanzuseamericas.tmc.cloud.vmware.com
 
 ```execute
 curl -X DELETE https://partnertanzuseamericas.tmc.cloud.vmware.com/v1alpha1/clustergroups/$SESSION_NAME-cg -H "Authorization: Bearer $access_token"
+```
+
+
+##### See the cluster groups again and now you should see that {{ session_namespace }}-cg is missing from the list
+
+```execute
+curl -s 'searchScope.name=*' https://partnertanzuseamericas.tmc.cloud.vmware.com/v1alpha1/clustergroups -H "Authorization: Bearer $access_token" | jq '.clusterGroups[].fullName.name'
 ```
