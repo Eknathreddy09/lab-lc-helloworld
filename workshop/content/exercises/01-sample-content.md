@@ -246,7 +246,7 @@ kubectl apply -f ~/clusterrolebinding.yaml
 ```
 
 ```execute-2
-cat clusterrolebinding.yaml
+cat ~/clusterrolebinding.yaml
 ```
 
 #### Stop the Jumpbox
