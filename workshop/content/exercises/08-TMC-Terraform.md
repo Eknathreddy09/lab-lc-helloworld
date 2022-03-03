@@ -31,6 +31,9 @@ cat tkgs-create-cluster.tf
 ```execute
 vi provider.tf
 ```
+###### Example:
+
+![TMC Terraform](images/TMC-token3.png)
 
 ##### Initialize the providers
 
@@ -65,7 +68,7 @@ terraform apply -target tanzu-mission-control_cluster.create_tkgs_workload -auto
 ##### Navigate to TMC Console to check the status of cluster creation, which generally takes 5-10 mins to complete. 
 
 ```dashboard:open-url
-url: https://console.cloud.vmware.com/csp/gateway/discovery
+url: https://partnertanzuseamericas.tmc.cloud.vmware.com/
 ```
 ###### Example: 
 ![Application](images/Terraform-5.png)
