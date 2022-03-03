@@ -54,7 +54,7 @@ tmc managementcluster list
 tmc clustergroup list
 ```
 
-#### Delete workload cluster using Tanzu CLI, should take few mins to complete
+#### Delete workload cluster using Tanzu CLI, should take 10-15 mins to complete
 
 ```execute-2
 tanzu cluster delete {{ session_namespace }} -y
@@ -66,7 +66,7 @@ tanzu cluster list
 
 ##### Proceed further once the workload cluster is deleted completely
 
-#### Delete Management cluster using Tanzu CLI, should take few mins to complete
+#### Delete Management cluster using Tanzu CLI, should take 15 mins to complete
 
 ```execute-2
 tanzu mc delete -y
