@@ -40,7 +40,7 @@ DEREGISTER
 
 ##### Verify the pod termination status in management cluster context, should take few mins to complete
 
-```execute
+```execute-2
 kubectl get pods -n vmware-system-tmc
 ```
 
