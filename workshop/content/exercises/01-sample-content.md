@@ -279,6 +279,10 @@ kubectl --kubeconfig=ldaps-tkg-mgmt-kubeconfig get nodes
 ```copy-and-edit
 curl -L "paste the url copied earlier that starts with http://127.0.0.1/"
 ```
+###### Example: 
+
+![Management Cluster](images/mgmt-auth-1.png)
+
 ##### Expected result: you have been logged in and may now close this tab
     
 ##### This script copies the config file into .kube  directory
