@@ -78,6 +78,6 @@ tanzu mc delete -y
 jbdelete=$(az group delete -n {{ session_namespace }}-JB --yes)
 ```
 
-#### Delete the localhost file
+##### Delete the localhost file
 
 ###### In your local machine, delete the entry that has hostname mapped with name {{ session_namespace }}.captainvirtualization.in from /etc/hosts
