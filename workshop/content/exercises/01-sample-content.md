@@ -279,6 +279,8 @@ kubectl --kubeconfig=ldaps-tkg-mgmt-kubeconfig get nodes
 ```copy-and-edit
 curl -L "paste the url copied earlier that starts with http://127.0.0.1/"
 ```
+###### Note: In Terminal-2, just right click and paste to edit above curl command 
+
 ###### Example: 
 
 ![Management Cluster](images/mgmt-auth-1.png)
