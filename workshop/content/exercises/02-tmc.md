@@ -3,7 +3,7 @@ In this section, Lets explore about TMC CLI by running some basic operations.
 #### Follow the below steps to get API Token from TMC console
 
 ```dashboard:open-url
-url: https://console.cloud.vmware.com/csp/gateway/discovery
+url: https://partnertanzuseamericas.tmc.cloud.vmware.com/
 ```
 Navigate to TMC console > My Account > API Token > Generate Token
 
@@ -82,7 +82,7 @@ tmc managementcluster get {{ session_namespace }}-mgmt
 Navigate to TMC console > Administration > Management clusters > click on {{ session_namespace }}-mgmt
 
 ```dashboard:open-url
-url: https://console.cloud.vmware.com/csp/gateway/discovery
+url: https://partnertanzuseamericas.tmc.cloud.vmware.com/
 ```
 
 ##### Attach the workload cluster {{ session_namespace }} using TMC CLI, wait for the process to complete. 
