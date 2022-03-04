@@ -1,4 +1,6 @@
-Workshop completed, Thank you. 
+Workshop completed
+
+![Thanks](exercises/images/thanks-1.png)
 
 ###### Please provide Feedback: 
 
