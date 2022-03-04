@@ -190,6 +190,13 @@ Expected result:
     
 ### Cluster creation takes about 15 mins
 
+###### Short video on TKG
+
+```dashboard:open-url
+url: https://www.youtube.com/watch?v=BCPU8rGDf_M
+```
+######
+
 #### Please wait till the management cluster is created ####
 #### Proceed further only once you see this on screen (terminal-2)
 
