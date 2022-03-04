@@ -10,4 +10,4 @@ spec:
   - name: lab-lc-helloworld
     capacity: 15
     expires: 300m
-    orphaned: 5m
+    orphaned: 15m
