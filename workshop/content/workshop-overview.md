@@ -1,3 +1,5 @@
+![Welcome](exercises/images/Welcome.png)
+
 This workshop helps you to get some good understanding on below topics: 
 
 1. Management cluster creation
