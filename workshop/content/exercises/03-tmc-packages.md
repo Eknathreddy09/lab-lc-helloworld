@@ -46,6 +46,8 @@ Name the Installed package name as : {{ session_namespace }}-contour and click N
 
 ![TMC Cluster console](images/TMC-12.png)
 
+Leave to Default and click NEXT
+
 ### Execute the command to see the config values in Terminal-2
 
 ```execute-2
@@ -78,6 +80,8 @@ Name the Installed package name as : {{ session_namespace }}-harbor and click NE
 
 ![TMC Package console](images/TMC-15.png)
 
+Leave to Default and click NEXT
+
 ### Execute the command to see the config values in Terminal-1
 
 ```execute-1
@@ -87,17 +91,15 @@ Copy the values from harbor.yaml and paste in TMC configure values page as shown
 
 ![TMC harbor values](images/TMC-16.png)
 
-Leave to Default and click NEXT
-
 Install Package
 
-##### Verify the pods, this might few mins to complete
+##### Verify the pods, this might take ~5 mins to complete
 
 ```execute-1
 kubectl get pods -n tanzu-system-registry --kubeconfig ~/.kube/config-tkg
 ```
 
-##### Node the Load Balancer IP and make an entry in your local machine /etc/hosts mapping the IP to {{ session_namespace }}.captainvirtualization.in
+##### Note the Load Balancer External IP and make an entry in your local machine /etc/hosts mapping the IP to {{ session_namespace }}.captainvirtualization.in
 
 ```execute-1
 kubectl get svc -n tanzu-system-ingress --kubeconfig ~/.kube/config-tkg
