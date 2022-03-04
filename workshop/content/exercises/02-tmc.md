@@ -38,19 +38,19 @@ tmc system context configure -l "log" -m {{ session_namespace }}-mgmt
 tmc managementcluster list
 ```
 
-##### Create Cluster group {{ session_namespace }}-cg
+##### Create Cluster group: {{ session_namespace }}-cg
 
 ```execute
 tmc clustergroup create --name {{ session_namespace }}-cg --description "Workshop of {{ session_namespace }}"
 ```
 
-##### List the cluster groups and verify if the created one {{ session_namespace }}-cg  is shown in the list
+##### List the cluster groups and verify if the created cg: {{ session_namespace }}-cg  is shown in the list
 
 ```execute
 tmc clustergroup list
 ```
 
-##### Register the management cluster {{ session_namespace }}-mgmt into TMC
+##### Register the management cluster (created in previous section) {{ session_namespace }}-mgmt into TMC
 
 ```execute
 tmc managementcluster register {{ session_namespace }}-mgmt  -k ~/.kube/config -p TKG -c {{ session_namespace }}-cg
@@ -85,7 +85,7 @@ Navigate to TMC console > Administration > Management clusters > click on {{ ses
 url: https://partnertanzuseamericas.tmc.cloud.vmware.com/
 ```
 
-##### Attach the workload cluster {{ session_namespace }} using TMC CLI, wait for the process to complete. 
+##### Attach the workload cluster (created in previous section) {{ session_namespace }} using TMC CLI, wait for the process to complete. 
 
 ```execute
 tmc cluster attach -g {{ session_namespace }}-cg -n {{ session_namespace }} -m {{ session_namespace }}-mgmt -p TKG --kubeconfig ~/.kube/config-tkg
