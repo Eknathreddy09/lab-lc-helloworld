@@ -123,38 +123,54 @@ Management Cluster Name:
 ![Info Cluster Settings](images/TKG-mgmt-3.png)
     
 ###### Metadata: Leave to default and click NEXT
+
     
 ###### Kubernetes Network: Leave to default and click NEXT
+
     
 ###### Identity Management: Enable Identity Management Settings > Select LDAPS
 
+
 ###### LDAPS Endpoint: partnerdemo.captainvirtualization.in
+
 
 ###### port: 636
 
 ###### BIND DN (OPTIONAL) : cn=partnerse-admin,cn=Users,dc=partnerdemo,dc=captainvirtualization,dc=in
 
+
 ###### BIND PASSWORD (OPTIONAL) : Welcome11!
+
 
 ##### User Search Attributes
 
+
 ###### BASE DN (OPTIONAL) : cn=Users,dc=partnerdemo,dc=captainvirtualization,dc=in
+
 
 ###### FILTER (OPTIONAL) : (objectClass=Person)
 
+
 ###### USERNAME (OPTIONAL) : userPrincipalName
+
 
 ##### Group Search Attributes
 
+
 ###### BASE DN (OPTIONAL) : dc=partnerdemo,dc=captainvirtualization,dc=in
+
 
 ###### FILTER (OPTIONAL) : (objectClass=group)
 
+
 ###### NAME ATTRIBUTE (OPTIONAL) : cn
+
 
 ###### USER ATTRIBUTE (OPTIONAL) : DN
 
+
 ###### GROUP ATTRIBUTE (OPTIONAL) : member
+
 
 ##### ROOT CA (OPTIONAL) 
 
@@ -162,9 +178,11 @@ Management Cluster Name:
 cat ~/ldap-ca.pem
 ```
 
+
 ##### VERIFY LDAP CONFIGURATION (OPTIONAL) : 
 
-###### verify LDAP configuration : In TEST USER NAME, use any of the below user to verify the load configuration
+
+###### verify LDAP configuration : In TEST USER NAME field, use any of the below user to verify the load configuration
 
 ![LDAPS](images/TKG-mgmt-8.png)
 
@@ -197,8 +215,8 @@ url: https://www.youtube.com/watch?v=BCPU8rGDf_M
 ```
 ######
 
-#### Please wait till the management cluster is created ####
-#### Proceed further only once you see this on screen (terminal-2)
+##### Please wait till the management cluster is created ####
+##### Proceed further only once you see this on screen (terminal-2)
 
 ###### Example:
 
@@ -268,7 +286,7 @@ kubectl apply -f ~/clusterrolebinding.yaml
 cat ~/clusterrolebinding.yaml
 ```
 
-#### Stop the Jumpbox
+#### Stop the Jumpbox, continue further once the task is completed. 
 
 ```execute-1
 az vm stop -n {{ session_namespace }} -g {{ session_namespace }}-JB
@@ -294,7 +312,7 @@ kubectl --kubeconfig=ldaps-tkg-mgmt-kubeconfig get nodes
     
 ![Management Cluster](images/TKG-mgmt-17.png)
     
-##### Run curl command in Terminal-2 with the url that is copied earlier
+##### Run curl command in Terminal-2 with the url that is copied earlier. 
 
 ```copy-and-edit
 curl -L "paste the url copied earlier that starts with http://127.0.0.1/"
@@ -366,6 +384,12 @@ kubectl logs $podname -n capz-system -c manager -f
 ###########################################################
 #### Wait for the cluster to get created ##################
 ###########################################################
+
+###### Doc for ref: 
+
+```dashboard:open-url
+url: https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.5/vmware-tanzu-kubernetes-grid-15/GUID-tanzu-k8s-clusters-index.html
+```
 
 ```execute-2
 <ctrl+c>
@@ -472,4 +496,4 @@ ingress_protocol: {{ ingress_protocol }}
 
 #### Web site links
 
-[Create TKG Clusters](http://captainvirtualization.com/category/tkg/)
+[Create TKG Cluster](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.5/vmware-tanzu-kubernetes-grid-15/GUID-tanzu-k8s-clusters-azure.html)
