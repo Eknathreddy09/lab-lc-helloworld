@@ -4,29 +4,29 @@
 
 Navigate to TMC console > Administration > Management clusters {{ session_namespace }}-mgmt
 
-###### Node the version as shown here: 
+###### Check the cluster version as shown here: 
 
 ![Mgmt cluster before Upgrade](images/TMC-40.png)
 
 Navigate to TMC console > Clusters > click on clustername {{ session_namespace }}
 
-###### Node the version as shown here: 
+###### Check the cluster version as shown here: 
 
 ![Workload cluster After Upgrade](images/TMC-41.png)
 
-###### Start the JB vm
+###### Start the JB vm, wait for the task to complete. 
 
 ```execute-1
 az vm start -n {{ session_namespace }} -g {{ session_namespace }}-JB
 ```
 
-### Connect using DNS hostname
+### Connect to JB
 
 ```execute-2
 ssh -i id_rsa azureuser@{{ session_namespace }}.centralindia.cloudapp.azure.com -o StrictHostKeyChecking=accept-new
 ```
 
-###### Upgrade the CLI and required tools to 1.5.1
+###### Upgrade the CLI and required tools to 1.5.1 in JB, this takes few mins to complete
 
 ```execute-2
 /bin/sh ~/script-session-upgrade.sh
