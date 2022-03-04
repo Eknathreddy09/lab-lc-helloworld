@@ -85,6 +85,8 @@ Resource Group: Create a new resource group and provide below name:
 
 ###### {{ session_namespace }}-RG
 
+###### Example:
+
 ![Info IaaS Provider](images/TKG-mgmt-1.png)
     
 Azure VNET Settings: 
@@ -102,6 +104,8 @@ Control Plane subnet name :
 Worker node subnet name: 
 ###### {{ session_namespace }}-worker 
 
+###### Example:
+
 ![Info VNET](images/TKG-mgmt-2.png)
     
 Management Cluster Settings: 
@@ -113,6 +117,8 @@ Management Cluster Name:
 ######    {{ session_namespace }}-mgmt
     
 ###### Worker Node Instance Type: Standard_D2s_v3
+
+###### Example:
 
 ![Info Cluster Settings](images/TKG-mgmt-3.png)
     
@@ -166,6 +172,8 @@ cat ~/ldap-ca.pem
 
 Expected result: 
 
+###### Example:
+
 ![LDAPS](images/TKG-mgmt-5.png)
     
 ###### OS Image: from dropdown select Ubuntu-20.04
@@ -176,12 +184,16 @@ Expected result:
     
 ###### Review Configuration and click on Deploy management cluster
 
+###### Example:
+
 ![OS Image](images/TKG-mgmt-7.png)
     
 ### Cluster creation takes about 15 mins
 
 #### Please wait till the management cluster is created ####
 #### Proceed further only once you see this on screen (terminal-2)
+
+###### Example:
 
 ![Management Cluster](images/TKG-1.png)
 
@@ -258,6 +270,7 @@ az vm stop -n {{ session_namespace }} -g {{ session_namespace }}-JB
 ```execute-1
 kubectl --kubeconfig=ldaps-tkg-mgmt-kubeconfig get nodes
 ```
+###### Example:
 
 ![Management Cluster](images/TKG-mgmt-15.png)
 
@@ -279,7 +292,7 @@ kubectl --kubeconfig=ldaps-tkg-mgmt-kubeconfig get nodes
 ```copy-and-edit
 curl -L "paste the url copied earlier that starts with http://127.0.0.1/"
 ```
-###### Note: In Terminal-2, just right click and paste to edit above curl command 
+###### Note: In Terminal-2, right click and paste to edit above curl command. 
 
 ###### Example: 
 
@@ -352,6 +365,9 @@ kubectl logs $podname -n capz-system -c manager -f
 ```
 
 ##### Proceed further only once you see this on screen (terminal-1)
+
+###### Example:
+
 ![Workload Cluster](images/TKG-2.png)
 
 #### Click here to check the deployed workload clusters 
@@ -422,6 +438,8 @@ url: http://externalipcollectedabove:8080
 ############################################################
 #### Inform VMware SE if application is not accessible #####
 ############################################################
+
+###### Example:
 
 ![Application](images/test-application.png)
 
