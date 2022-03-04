@@ -69,6 +69,6 @@ kubectl get pods -n cert-manager --kubeconfig ~/.kube/config-tkg
 ###### Navigate to TMC console > Clusters > select the cluster  {{ session_namespace }} > Add-ons 
 Verify if the packages are deleted. 
 
+###### Example:
 ![Application](images/TMC-25.png)
-
 
