@@ -69,7 +69,7 @@ tanzu management-cluster create --ui --bind 0.0.0.0:8080
 url: http://{{ session_namespace }}.centralindia.cloudapp.azure.com:8080
 ```
     
-##### Azure environment details for management cluster creation can be found by executing this command: 
+##### Azure environment details for management cluster creation can be found by executing this command in terminal 1: 
 
 ```execute
 cat /home/eduk8s/creds-tkg
@@ -78,9 +78,17 @@ cat /home/eduk8s/creds-tkg
 <p style="color:red"><strong>Copy and paste the values in Installer page opened in browser.</strong></p>
 
 
-##### Fill Iaas provider details as shown in creds-tkg file: 
+##### Fill Iaas provider details as shown in creds-tkg file (terminal-1): 
+
+###### Click CONNECT
+
+--------------------
 
 ###### Region: West US 2
+
+--------------------
+
+###### SSH PUBLIC KEY : As shown in terminal-1
 
 ---------------------
 
@@ -131,7 +139,9 @@ Management Cluster Settings: <p style="color:orange"><strong>Development</strong
 
 -----------------
 
-###### Instance Type: Standard_D2s_v3
+Instance Type: 
+
+###### Standard_D2s_v3
 
 -----------------
     
@@ -140,7 +150,9 @@ Management Cluster Name:
 
 -----------------
     
-###### Worker Node Instance Type: Standard_D2s_v3
+Worker Node Instance Type: 
+
+###### Standard_D2s_v3
 
 -----------------
 
@@ -162,10 +174,11 @@ Kubernetes Network:
 
 ###### Leave to default and click NEXT
     
------------------
------------------
+<hr style="border:2px solid blue"> </hr>
     
-###### Identity Management: Enable Identity Management Settings > Select LDAPS
+Identity Management: 
+
+###### Enable Identity Management Settings > Select LDAPS
 
 -----------------
 
@@ -296,6 +309,9 @@ Expected result:
 ![OS Image](images/TKG-mgmt-7.png)
     
 <p style="color:red"><strong>Cluster creation takes about 15 mins</strong></p>
+###### NOTE #######
+<p style="color:black"><strong>In 1.4.1, while deploying the management cluster using bind, It is expected to see the error () in Terminal-2 </strong></p>
+###################
 
 ###### Short video on TKG
 
@@ -311,37 +327,37 @@ url: https://www.youtube.com/watch?v=BCPU8rGDf_M
 
 ![Management Cluster](images/TKG-1.png)
 
-##### Check the contexts
+##### Check for the contexts in Terminal-2
 
 ```execute-2
 kubectl config get-contexts
 ```
 
-##### Check the management cluster info
+##### Check the management cluster info in Terminal-2
 
 ```execute-2
 tanzu mc get
 ```
 
-##### Check resources in pinniped-supervisor namespace
+##### Check resources in pinniped-supervisor namespace in Terminal-2
 
 ```execute-2
 kubectl get all -n pinniped-supervisor
 ```
 
-##### Check resources in tanzu-system-auth namespace
+##### Check resources in tanzu-system-auth namespace in Terminal-2
 
 ```execute-2
 kubectl get all -n tanzu-system-auth
 ```
 
-##### Export the variable
+##### Export the variable in Terminal-2
 
 ```execute-2
 export TANZU_CLI_PINNIPED_AUTH_LOGIN_SKIP_BROWSER=true
 ```
 
-##### Generate a kubeconfig file
+##### Generate a kubeconfig file in Terminal-2
 
 ```execute-2
 tanzu management-cluster kubeconfig get --export-file /tmp/ldaps-tkg-mgmt-kubeconfig
@@ -359,13 +375,19 @@ scp -i ~/id_rsa -o StrictHostKeyChecking=accept-new azureuser@{{ session_namespa
 cat ~/ldaps-tkg-mgmt-kubeconfig
 ```
 
-##### In below clusterrolebinding file, provide the username that you wish to authenticate. Usernames can be anything between partnerse-user1 to partnerse-user14 For ex: replace username@partnerdemo.captainvirtualization.in with partnerse-user6@parterdemo.captainvirtualization.in
+##### In below clusterrolebinding file, provide a username that you wish to authenticate. Usernames can be anything between partnerse-user1 to partnerse-user14.
+
+###### Note ######
+<p style="color:black"><strong>Remember the username you have given here in clusterrolebinding file, this will be used in next step.</strong></p>
+##################
+
+<p style="color:brown"><strong>For ex: replace username@partnerdemo.captainvirtualization.in with partnerse-user6@parterdemo.captainvirtualization.in</strong></p>
 
 ```execute-2
 vi ~/clusterrolebinding.yaml
 ```
 
-##### Create cluster role binding as admin 
+##### Create cluster role binding as admin in Terminal-2
 
 ```execute-2
 kubectl apply -f ~/clusterrolebinding.yaml
@@ -384,16 +406,41 @@ az vm stop -n {{ session_namespace }} -g {{ session_namespace }}-JB
 ```execute-1
 kubectl --kubeconfig=ldaps-tkg-mgmt-kubeconfig get nodes
 ```
-###### Example:
+<p style="color:black"><strong>Example:</strong></p>
 
 ![Management Cluster](images/TKG-mgmt-15.png)
 
-###### The login URL is displayed in terminal-1. copy the url and paste in local browser. 
+<p style="color:black"><strong>The login URL is displayed in terminal-1. copy the url and paste in your local machine browser. </strong></p>
 
-![Credentials](images/TKG-mgmt-8.png)
+--------------------
 
-##### LDAP Username: "ldap user name as given in clusterrolebinding.yaml file"@partnerdemo.captainvirtualization.in
-##### Password: "Password as given in above credentials screenshot"
+LDAP Username: 
+
+###### "ldap user name as given in clusterrolebinding.yaml file"@partnerdemo.captainvirtualization.in
+
+Password: 
+
+###### "Password as given in below credentials table"
+
+--------------------
+
+  |     User Name             |    Password     |
+  |       :---:               |    :---:        |
+  |    partnerse-user1        |    Welcome11!   |
+  |    partnerse-user2        |    Welcome11!   |
+  |    partnerse-user3        |    Welcome11!   |
+  |    partnerse-user4        |    Welcome11!   |
+  |    partnerse-user5        |    Welcome11!   |
+  |    partnerse-user6        |    Welcome11!   |
+  |    partnerse-user7        |    Welcome11!   |
+  |    partnerse-user8        |    Welcome11!   |
+  |    partnerse-user9        |    Welcome11!   |
+  |    partnerse-user10       |    Welcome11!   |
+  |    partnerse-user11       |    Welcome11!   |
+  |    partnerse-user12       |    Welcome11!   |
+  |    partnerse-user13       |    Welcome11!   |
+  |    partnerse-user14       |    Welcome11!   |
+
 
 ###### Ref Screenshots: 
 
@@ -401,18 +448,24 @@ kubectl --kubeconfig=ldaps-tkg-mgmt-kubeconfig get nodes
     
 ![Management Cluster](images/TKG-mgmt-17.png)
     
-##### Run curl command in Terminal-2 with the url that is copied earlier. 
+##### Run below curl command in Terminal-2 with the url that is copied earlier. 
 
 ```copy-and-edit
 curl -L "paste the url copied earlier that starts with http://127.0.0.1/"
 ```
-###### Note: In Terminal-2, right click and paste to edit above curl command. 
+<p style="color:black"><strong>Note: In Terminal-2, right click and paste to edit above curl command. </strong></p>
 
 <p style="color:black"><strong>Example:</strong></p>
 
 ![Management Cluster](images/mgmt-auth-1.png)
 
-##### Expected result: you have been logged in and may now close this tab
+--------------------
+
+Expected result: 
+
+###### you have been logged in and may now close this tab
+
+--------------------
     
 ##### This script copies the config file into .kube  directory
 
@@ -420,7 +473,7 @@ curl -L "paste the url copied earlier that starts with http://127.0.0.1/"
 cp ldaps-tkg-mgmt-kubeconfig ~/.kube/config
 ```
 
-###### Tanzu login
+##### Tanzu login
 
 ```execute-1
 tanzu login --kubeconfig ~/.kube/config --context tanzu-cli-{{ session_namespace }}-mgmt@{{ session_namespace }}-mgmt --name tanzu-cli-{{ session_namespace }}-mgmt
@@ -460,9 +513,9 @@ cat /home/eduk8s/wc-config.yaml
 tanzu cluster create {{ session_namespace }} -f /home/eduk8s/wc-config.yaml
 ```
 
-##### Now the cluster is deployed using LDAP user. 
+##### Now the cluster is being deployed as LDAP user. 
 
-Meanwhile you can check the cluster creation logs in Terminal 2
+--------------------
 
 ##### Click here to check the progress of workload creation from logs
 
@@ -470,6 +523,9 @@ Meanwhile you can check the cluster creation logs in Terminal 2
 podname=$(kubectl get pods -n capz-system -o=jsonpath={.items[0].metadata.name})
 kubectl logs $podname -n capz-system -c manager -f
 ```
+
+--------------------
+
 ###########################################################
 #### Wait for the cluster to get created ##################
 ###########################################################
