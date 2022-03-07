@@ -83,9 +83,13 @@ cat /home/eduk8s/creds-tkg
 
 Resource Group: Create a new resource group and provide below name: 
 
-```html
-<h3 style="color:#ff0000">{{ session_namespace }}-RG</h3>
-```
+<style>
+H5{color:Blue !important;}
+H6{color:DarkOrange !important;}
+</style>
+
+###### {{ session_namespace }}-RG
+
 ###### Example:
 
 ![Info IaaS Provider](images/TKG-mgmt-1.png)
