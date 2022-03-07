@@ -96,8 +96,11 @@ Create a new VNET on Azure > from drop down select the newly created RG:
 ###### {{ session_namespace }}-RG
     
 Provide VNET name as:
-###### {{ session_namespace }}-vnet
-    
+```diff
+
+*** {{ session_namespace }}-vnet ***
+
+```
 Control Plane subnet name : 
 ###### {{ session_namespace }}-cp
     
@@ -184,7 +187,22 @@ cat ~/ldap-ca.pem
 
 ###### verify LDAP configuration : In TEST USER NAME field, use any of the below user to verify the load configuration
 
-![LDAPS](images/TKG-mgmt-8.png)
+| User Name | Password |
+|---------- | -------- |
+| partnerse-user1 | Welcome11! |
+| partnerse-user2 | Welcome11! |
+| partnerse-user3 | Welcome11! |
+| partnerse-user4 | Welcome11! |
+| partnerse-user5 | Welcome11! |
+| partnerse-user6 | Welcome11! |
+| partnerse-user7 | Welcome11! |
+| partnerse-user8 | Welcome11! |
+| partnerse-user9 | Welcome11! |
+| partnerse-user10 | Welcome11! |
+| partnerse-user11 | Welcome11! |
+| partnerse-user12 | Welcome11! |
+| partnerse-user13 | Welcome11! |
+| partnerse-user14 | Welcome11! |
 
 ###### Click START
 
