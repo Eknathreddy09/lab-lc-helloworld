@@ -3,7 +3,14 @@ In this section, lets see the procedure to push packages(catalog) from TMC and c
 ```dashboard:open-url
 url: https://docs.vmware.com/en/VMware-Tanzu-Mission-Control/services/tanzumc-using/GUID-EF35646D-8762-41F1-95E5-D2F35ED71BA1.html
 ```
-#### Install cert-manager Package using TMC CLI: 
+
+<style>
+H5{color:Blue !important;}
+H6{color:DarkOrange !important;}
+</style>
+
+
+#### Install cert-manager Package using TMC Console: 
 
 Navigate to TMC console > Catalog > select cluster {{ session_namespace }} from drop down and click on cert-manager
 
@@ -32,7 +39,7 @@ Navigate to TMC console > Catalog > Installed > check if the package (cert-manag
 ![TMC Cluster console](images/TMC-9.png)
 
 
-#### Install Contour Package using TMC CLI: 
+#### Install Contour Package using TMC Console: 
 
 Navigate to TMC console > Catalog > select cluster {{ session_namespace }} from drop down and click on Contour
 
@@ -48,7 +55,7 @@ Name the Installed package name as : {{ session_namespace }}-contour and click N
 
 Leave to Default and click NEXT
 
-### Execute the command to see the config values in Terminal-2
+##### Execute the command to see the config values in Terminal-2
 
 ```execute-2
 cat ~/contour.yaml
@@ -68,7 +75,7 @@ Navigate to TMC console > Catalog > Installed > check if the package (cert-manag
 kubectl get svc -n tanzu-system-ingress --kubeconfig ~/.kube/config-tkg
 ```
 
-#### Install Harbor Package using TMC CLI: 
+#### Install Harbor Package using TMC Console: 
 
 Navigate to TMC console > Catalog > select cluster {{ session_namespace }} from drop down and click on Harbor
 
@@ -82,7 +89,7 @@ Name the Installed package name as : {{ session_namespace }}-harbor and click NE
 
 Leave to Default and click NEXT
 
-### Execute the command to see the config values in Terminal-1
+##### Execute the command to see the config values in Terminal-1
 
 ```execute-1
 cat ~/harbor.yaml
@@ -99,21 +106,28 @@ Install Package
 kubectl get pods -n tanzu-system-registry --kubeconfig ~/.kube/config-tkg
 ```
 
-##### Note the Load Balancer External IP and make an entry in your local machine /etc/hosts mapping the IP to {{ session_namespace }}.captainvirtualization.in
+##### Note the Load Balancer External IP and make an entry in your local machine ( /etc/hosts ) mapping the IP to {{ session_namespace }}.captainvirtualization.in
 
 ```execute-1
 kubectl get svc -n tanzu-system-ingress --kubeconfig ~/.kube/config-tkg
 ```
 
-## Example: 
+<p style="color:black"><strong>Example:</strong></p>
+
 ![local host file entry example](images/TMC-21.png)
 
 ```dashboard:open-url
 url: https://{{ session_namespace }}.captainvirtualization.in/
 ```
 
-##### Enter the credentials: admin, Newstart@1
+-------------------
 
-## Example: 
+Enter the credentials: 
+
+###### admin, Newstart@1
+
+-------------------
+
+<p style="color:black"><strong>Example:</strong></p>
 
 ![TMC Cluster console](images/TMC-20.png)
