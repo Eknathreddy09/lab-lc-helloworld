@@ -88,7 +88,7 @@ DELETE
 kubectl get pods -n cert-manager --kubeconfig ~/.kube/config-tkg
 ```
 
-<p style="color:black"><Navigate to TMC console > Clusters > select the cluster  {{ session_namespace }} > Add-ons </strong></p>
+<p style="color:black">Navigate to TMC console > Clusters > select the cluster  {{ session_namespace }} > Add-ons </strong></p>
 
 Verify if the packages are deleted. 
 
