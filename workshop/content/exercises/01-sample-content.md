@@ -144,9 +144,13 @@ Management Cluster Name:
 
 -----------------
 
-###### Example:
+<p style="color:black"><strong>Example:</strong></p>
 
 ![Info Cluster Settings](images/TKG-mgmt-3.png)
+
+###### Click NEXT
+
+-----------------
     
 ###### Metadata: Leave to default and click NEXT
 
