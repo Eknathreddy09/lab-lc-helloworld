@@ -93,5 +93,6 @@ kubectl get pods -n cert-manager --kubeconfig ~/.kube/config-tkg
 Verify if the packages are deleted. 
 
 <p style="color:black"><strong>Example:</strong></p>
+
 ![Application](images/TMC-25.png)
 
