@@ -116,21 +116,29 @@ Control Plane subnet name :
 Worker node subnet name: 
 ###### {{ session_namespace }}-worker 
 
-###### Example:
+#### Example:
 
 ![Info VNET](images/TKG-mgmt-2.png)
 
 -----------------
 
 Management Cluster Settings: \
-  Select Development 
-  
+###### Select Development 
+
+-----------------
+
 ###### Instance Type: Standard_D2s_v3
+
+-----------------
     
 Management Cluster Name: 
 ######    {{ session_namespace }}-mgmt
+
+-----------------
     
 ###### Worker Node Instance Type: Standard_D2s_v3
+
+-----------------
 
 ###### Example:
 
@@ -138,77 +146,100 @@ Management Cluster Name:
     
 ###### Metadata: Leave to default and click NEXT
 
+-----------------
+
 ###### Kubernetes Network: Leave to default and click NEXT
+    
+-----------------
+-----------------
     
 ###### Identity Management: Enable Identity Management Settings > Select LDAPS
 
+-----------------
+
 ###### LDAPS Endpoint: partnerdemo.captainvirtualization.in
+
+-----------------
 
 ###### port: 636
 
+-----------------
+
 ###### BIND DN (OPTIONAL) : cn=partnerse-admin,cn=Users,dc=partnerdemo,dc=captainvirtualization,dc=in
+
+-----------------
 
 ###### BIND PASSWORD (OPTIONAL) : Welcome11!
 
+-----------------
 
 ##### User Search Attributes
 
 
+
 ###### BASE DN (OPTIONAL) : cn=Users,dc=partnerdemo,dc=captainvirtualization,dc=in
 
+-----------------
 
 ###### FILTER (OPTIONAL) : (objectClass=Person)
 
+-----------------
 
 ###### USERNAME (OPTIONAL) : userPrincipalName
 
+-----------------
 
 ##### Group Search Attributes
 
 
 ###### BASE DN (OPTIONAL) : dc=partnerdemo,dc=captainvirtualization,dc=in
 
+-----------------
 
 ###### FILTER (OPTIONAL) : (objectClass=group)
 
+-----------------
 
 ###### NAME ATTRIBUTE (OPTIONAL) : cn
 
+-----------------
 
 ###### USER ATTRIBUTE (OPTIONAL) : DN
 
+-----------------
 
 ###### GROUP ATTRIBUTE (OPTIONAL) : member
 
+-----------------
 
 ##### ROOT CA (OPTIONAL) 
 
 ```execute-1
 cat ~/ldap-ca.pem
 ```
-
+-----------------
 
 ##### VERIFY LDAP CONFIGURATION (OPTIONAL) : 
 
 
 ###### verify LDAP configuration : In TEST USER NAME field, use any of the below user to verify the load configuration
 
-|    User Name       |  Password  |
-|   ----------       |  --------  |
-|  partnerse-user1   | Welcome11! |
-|  partnerse-user2   | Welcome11! |
-|  partnerse-user3   | Welcome11! |
-|  partnerse-user4   | Welcome11! |
-|  partnerse-user5   | Welcome11! |
-|  partnerse-user6   | Welcome11! |
-|  partnerse-user7   | Welcome11! |
-|  partnerse-user8   | Welcome11! |
-|  partnerse-user9   | Welcome11! |
-|  partnerse-user10  | Welcome11! |
-|  partnerse-user11  | Welcome11! |
-|  partnerse-user12  | Welcome11! |
-|  partnerse-user13  | Welcome11! |
-|  partnerse-user14  | Welcome11! |
+|     User Name             |    Password     |
+|    :----------:           |    :--------:   |
+|    partnerse-user1        |    Welcome11!   |
+|    partnerse-user2        |    Welcome11!   |
+|    partnerse-user3        |    Welcome11!   |
+|    partnerse-user4        |    Welcome11!   |
+|    partnerse-user5        |    Welcome11!   |
+|    partnerse-user6        |    Welcome11!   |
+|    partnerse-user7        |    Welcome11!   |
+|    partnerse-user8        |    Welcome11!   |
+|    partnerse-user9        |    Welcome11!   |
+|    partnerse-user10       |    Welcome11!   |
+|    partnerse-user11       |    Welcome11!   |
+|    partnerse-user12       |    Welcome11!   |
+|    partnerse-user13       |    Welcome11!   |
+|    partnerse-user14       |    Welcome11!   |
 
 ###### Click START
 
@@ -217,6 +248,9 @@ Expected result:
 ###### Example:
 
 ![LDAPS](images/TKG-mgmt-5.png)
+
+-----------------
+-----------------
     
 ###### OS Image: from dropdown select Ubuntu-20.04
 
@@ -237,7 +271,6 @@ Expected result:
 ```dashboard:open-url
 url: https://www.youtube.com/watch?v=BCPU8rGDf_M
 ```
-######
 
 ##### Please wait till the management cluster is created ####
 ##### Proceed further only once you see this on screen (terminal-2)
