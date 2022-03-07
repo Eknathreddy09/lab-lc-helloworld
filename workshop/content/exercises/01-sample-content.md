@@ -42,15 +42,11 @@ export SESSION_NAME={{ session_namespace }}
 ```
 
 ##### Set up the environment
+<p style="color:red"><strong>Please wait for 3-5 mins once you execute below script. Continue once the ongoing task is completed in Terminal-1.</strong></p>
 
 ```execute-1
 source ~/script-session.sh
 ```
-
-### Preparing your setup
-
-<p style="color:red"><strong>Please wait for 3-5 mins. Continue once the ongoing task is completed in Terminal-1.</strong></p>
-
 ##### Connect to jumpbox in Terminal-2 to deploy a Management cluster
 
 ```execute-2
@@ -309,8 +305,18 @@ Expected result:
 ![OS Image](images/TKG-mgmt-7.png)
     
 <p style="color:red"><strong>Cluster creation takes about 15 mins</strong></p>
+
 ###### NOTE #######
-<p style="color:black"><strong>In 1.4.1, while deploying the management cluster using bind, It is expected to see the error () in Terminal-2 </strong></p>
+<p style="color:brown"><strong>In 1.4.1, while deploying the management cluster using bind, It is expected to see the below errors in Terminal-2 </strong></p>
+
+-------------------
+
+###### unable to open browser: exec: “xdg-open”: executable file not found in $PATH”
+
+###### Upgrader.CheckOriginweb socket upgrade error: websocket: request origin not allowed by Upgrader.CheckOriginweb socket upgrade error: websocket:
+
+-------------------
+
 ###################
 
 ###### Short video on TKG
