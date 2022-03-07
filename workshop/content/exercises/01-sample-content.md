@@ -47,7 +47,7 @@ export SESSION_NAME={{ session_namespace }}
 source ~/script-session.sh
 ```
 
-## Preparing your setup
+### Preparing your setup
 
 <p style="color:red"><strong>Please wait for 3-5 mins. Continue once the ongoing task is completed in Terminal-1.</strong></p>
 
@@ -63,7 +63,7 @@ ssh -i id_rsa azureuser@{{ session_namespace }}.centralindia.cloudapp.azure.com 
 tanzu management-cluster create --ui --bind 0.0.0.0:8080
 ```
 
-##### Access below url and select Azure in Installer page
+##### Access below url and select Microsoft Azure in Installer page
 
 ```dashboard:open-url
 url: http://{{ session_namespace }}.centralindia.cloudapp.azure.com:8080
@@ -75,7 +75,8 @@ url: http://{{ session_namespace }}.centralindia.cloudapp.azure.com:8080
 cat /home/eduk8s/creds-tkg
 ```
     
-##### Copy and paste the values in Installer page opened in browser
+<p style="color:red"><strong>Copy and paste the values in Installer page opened in browser.</strong></p>
+
 
 ##### Fill Iaas provider details as shown in creds-tkg file: 
 
@@ -90,7 +91,7 @@ H6{color:DarkOrange !important;}
 
 ###### {{ session_namespace }}-RG
 
-###### Example:
+<p style="color:black"><strong>Example:</strong></p>
 
 ![Info IaaS Provider](images/TKG-mgmt-1.png)
     
@@ -116,14 +117,13 @@ Control Plane subnet name :
 Worker node subnet name: 
 ###### {{ session_namespace }}-worker 
 
-#### Example:
+<p style="color:black"><strong>Example:</strong></p>
 
 ![Info VNET](images/TKG-mgmt-2.png)
 
 -----------------
 
-Management Cluster Settings: \
-###### Select Development 
+Management Cluster Settings: Select <p style="color:orange"><strong>Development</strong></p>
 
 -----------------
 
@@ -225,7 +225,7 @@ cat ~/ldap-ca.pem
 ###### verify LDAP configuration : In TEST USER NAME field, use any of the below user to verify the load configuration
 
 |     User Name             |    Password     |
-|    :----------:           |    :--------:   |
+|    :---:                  |    :---:        |
 |    partnerse-user1        |    Welcome11!   |
 |    partnerse-user2        |    Welcome11!   |
 |    partnerse-user3        |    Welcome11!   |
@@ -245,7 +245,7 @@ cat ~/ldap-ca.pem
 
 Expected result: 
 
-###### Example:
+<p style="color:black"><strong>Example:</strong></p>
 
 ![LDAPS](images/TKG-mgmt-5.png)
 
@@ -260,7 +260,7 @@ Expected result:
     
 ###### Review Configuration and click on Deploy management cluster
 
-###### Example:
+<p style="color:black"><strong>Example:</strong></p>
 
 ![OS Image](images/TKG-mgmt-7.png)
     
@@ -272,10 +272,11 @@ Expected result:
 url: https://www.youtube.com/watch?v=BCPU8rGDf_M
 ```
 
-##### Please wait till the management cluster is created ####
+<p style="color:red"><strong>Please wait till the management cluster is created</strong></p>
+
 ##### Proceed further only once you see this on screen (terminal-2)
 
-###### Example:
+<p style="color:black"><strong>Example:</strong></p>
 
 ![Management Cluster](images/TKG-1.png)
 
@@ -376,7 +377,7 @@ curl -L "paste the url copied earlier that starts with http://127.0.0.1/"
 ```
 ###### Note: In Terminal-2, right click and paste to edit above curl command. 
 
-###### Example: 
+<p style="color:black"><strong>Example:</strong></p>
 
 ![Management Cluster](images/mgmt-auth-1.png)
 
@@ -454,7 +455,7 @@ url: https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.5/vmware-tanzu-ku
 
 ##### Proceed further only once you see this on screen (terminal-1)
 
-###### Example:
+<p style="color:black"><strong>Example:</strong></p>
 
 ![Workload Cluster](images/TKG-2.png)
 
@@ -527,7 +528,7 @@ url: http://externalipcollectedabove:8080
 #### Inform VMware SE if application is not accessible #####
 ############################################################
 
-###### Example:
+<p style="color:black"><strong>Example:</strong></p>
 
 ![Application](images/test-application.png)
 
