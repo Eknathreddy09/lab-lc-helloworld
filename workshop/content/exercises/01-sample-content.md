@@ -69,7 +69,7 @@ tanzu management-cluster create --ui --bind 0.0.0.0:8080
 url: http://{{ session_namespace }}.centralindia.cloudapp.azure.com:8080
 ```
     
-##### Azure details for management cluster creation can be found by executing this command: 
+##### Azure environment details for management cluster creation can be found by executing this command: 
 
 ```execute
 cat /home/eduk8s/creds-tkg
