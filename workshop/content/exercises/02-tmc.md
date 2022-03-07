@@ -1,5 +1,10 @@
 In this section, Lets explore about TMC CLI by running some basic operations. 
 
+<style>
+H5{color:Blue !important;}
+H6{color:DarkOrange !important;}
+</style>
+
 #### Follow the below steps to get API Token from TMC console
 
 ```dashboard:open-url
@@ -16,9 +21,11 @@ select All Roles
 
 ![TMC Generate API Token](images/TMC-3.png)
 
-##### Copy the token and save it for later use ####
+<p style="color:red"><strong>Copy the token and save it for later use</strong></p>
 
 ![TMC Token](images/TMC-4.png)
+
+------------------------
 
 ##### Authenticate to TMC
 
@@ -27,6 +34,10 @@ tmc login -n {{ session_namespace }} --no-configure
 ```
 ###### Provide API Token
 ###### Login context name(leave to default) - Press Enter
+
+------------------------
+
+##### Configure: 
 
 ```execute
 tmc system context configure -l "log" -m {{ session_namespace }}-mgmt
@@ -56,7 +67,7 @@ tmc clustergroup list
 tmc managementcluster register {{ session_namespace }}-mgmt  -k ~/.kube/config -p TKG -c {{ session_namespace }}-cg
 ```
 
-##### Wait for the registration to complete, ETA: 2 mins
+<p style="color:black"><strong>Wait for the registration to complete, ETA: 2 mins</strong></p>
 
 ##### List the management clusters and verify if registered management cluster {{ session_namespace }}-mgmt is shown in the list
 
