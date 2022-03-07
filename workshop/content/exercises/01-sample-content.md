@@ -83,8 +83,9 @@ cat /home/eduk8s/creds-tkg
 
 Resource Group: Create a new resource group and provide below name: 
 
-###### {{ session_namespace }}-RG
-
+```html
+<h3 style="color:#ff0000">###### {{ session_namespace }}-RG</h3>
+```
 ###### Example:
 
 ![Info IaaS Provider](images/TKG-mgmt-1.png)
@@ -94,24 +95,30 @@ Azure VNET Settings:
 Create a new VNET on Azure > from drop down select the newly created RG:
     
 ###### {{ session_namespace }}-RG
-    
+
+-----------------
+
 Provide VNET name as:
-```diff
 
-*** {{ session_namespace }}-vnet ***
+###### {{ session_namespace }}-vnet
 
-```
+-----------------
+
 Control Plane subnet name : 
 ###### {{ session_namespace }}-cp
-    
+
+----------------
+
 Worker node subnet name: 
 ###### {{ session_namespace }}-worker 
 
 ###### Example:
 
 ![Info VNET](images/TKG-mgmt-2.png)
-    
-Management Cluster Settings: 
+
+-----------------
+
+Management Cluster Settings: \
   Select Development 
   
 ###### Instance Type: Standard_D2s_v3
@@ -127,20 +134,15 @@ Management Cluster Name:
     
 ###### Metadata: Leave to default and click NEXT
 
-    
 ###### Kubernetes Network: Leave to default and click NEXT
-
     
 ###### Identity Management: Enable Identity Management Settings > Select LDAPS
 
-
 ###### LDAPS Endpoint: partnerdemo.captainvirtualization.in
-
 
 ###### port: 636
 
 ###### BIND DN (OPTIONAL) : cn=partnerse-admin,cn=Users,dc=partnerdemo,dc=captainvirtualization,dc=in
-
 
 ###### BIND PASSWORD (OPTIONAL) : Welcome11!
 
