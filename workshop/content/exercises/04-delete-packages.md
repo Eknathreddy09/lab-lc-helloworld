@@ -2,22 +2,32 @@
 
 #### Delete Harbor Package:
 
+<style>
+H5{color:Blue !important;}
+H6{color:DarkOrange !important;}
+</style>
 
-###### Navigate to TMC console > Clusters > select the cluster {{ session_namespace }} > Add-ons > click on {{ session_namespace }}-harbor
+<p style="color:black"><strong>Navigate to TMC console > Clusters > select the cluster {{ session_namespace }} > Add-ons > click on {{ session_namespace }}-harbor</strong></p>
 
 Click on Delete which can be found in top right corner > Actions > Delete
 
-###### Example:
+<p style="color:black"><strong>Example:</strong></p>
 
 ![Application](images/TMC-30.png)
 
-###### provide the name: {{ session_namespace }}-harbor
+-----------------
+
+provide the name:
+
+###### {{ session_namespace }}-harbor
+
+-----------------
 
 DELETE
 
 Check the status of deletion by navigating to TMC console > Clusters > select the cluster  {{ session_namespace }} > Add-ons > Installed
 
-###### Example:
+<p style="color:black"><strong>Example:</strong></p>
 ![Application](images/TMC-22.png)
 
 ##### Verify the pods termination status
@@ -28,15 +38,21 @@ kubectl get pods -n tanzu-system-registry --kubeconfig ~/.kube/config-tkg
 
 #### Delete Contour Package:
 
-###### Navigate to TMC console > Clusters > select the cluster  {{ session_namespace }} > Add-ons > click on {{ session_namespace }}-contour
+<p style="color:black"><strong>Navigate to TMC console > Clusters > select the cluster  {{ session_namespace }} > Add-ons > click on {{ session_namespace }}-contour</strong></p>
 
 Click on Delete which can be found in top right corner > Actions > Delete
 
-###### provide the name {{ session_namespace }}-contour
+-----------------
+
+provide the name:
+
+###### {{ session_namespace }}-contour
+
+-----------------
 
 DELETE
 
-###### Example:
+<p style="color:black"><strong>Example:</strong></p>
 
 ![Application](images/TMC-24.png)
 
@@ -48,15 +64,21 @@ kubectl get svc -n tanzu-system-ingress --kubeconfig ~/.kube/config-tkg
 
 #### Delete Cert-manager Package:
 
-###### Navigate to TMC console > Clusters > select the cluster  {{ session_namespace }} > Add-ons > click on {{ session_namespace }}-certm
+<p style="color:black"><strong>Navigate to TMC console > Clusters > select the cluster  {{ session_namespace }} > Add-ons > click on {{ session_namespace }}-certm</strong></p>
 
 Click on Delete which can be found in top right corner > Actions > Delete
 
-###### Example:
+<p style="color:black"><strong>Example:</strong></p>
 
 ![Application](images/TMC-23.png)
 
-###### provide the name {{ session_namespace }}-certm
+-----------------
+
+provide the name:
+
+###### {{ session_namespace }}-certm
+
+-----------------
 
 DELETE
 
@@ -66,9 +88,10 @@ DELETE
 kubectl get pods -n cert-manager --kubeconfig ~/.kube/config-tkg
 ```
 
-###### Navigate to TMC console > Clusters > select the cluster  {{ session_namespace }} > Add-ons 
+<p style="color:black"><Navigate to TMC console > Clusters > select the cluster  {{ session_namespace }} > Add-ons </strong></p>
+
 Verify if the packages are deleted. 
 
-###### Example:
+<p style="color:black"><strong>Example:</strong></p>
 ![Application](images/TMC-25.png)
 
