@@ -49,7 +49,7 @@ source ~/script-session.sh
 
 ## Preparing your setup
 
-<p style="color:red"><span class="bolded"> Please wait for 3-5 mins. Continue once the ongoing task is completed in Terminal-1. </span></p>
+<p style="color:red"><strong>Please wait for 3-5 mins. Continue once the ongoing task is completed in Terminal-1.</strong></p>
 
 ##### Connect to deploy a Management cluster
 
