@@ -13,12 +13,13 @@ H6{color:DarkOrange !important;}
 
 #### fetch API Token: 
 
-##### Replace: replace me with TMC API Token> with API Token collected in TMC section 
+###### Note: In Terminal-1, just right click and paste to edit above curl command. replace the API Token.
 
 ```copy-and-edit
 refresh_token=<replace me with TMC API Token>
 ```
-###### Note: In Terminal-1, just right click and paste to edit above curl command 
+
+<p style="color:black"><strong>Example:</strong></p>
 
 ![TMC Token](images/TMC-token.png)
 
@@ -45,6 +46,8 @@ echo $access_token
 ```dashboard:open-url
 url: https://jwt.io/
 ```
+
+<p style="color:black"><strong>Example:</strong></p>
 
 ![TMC Token JWT](images/TMC-token2.png)
 
