@@ -51,13 +51,13 @@ source ~/script-session.sh
 
 <p style="color:red"><strong>Please wait for 3-5 mins. Continue once the ongoing task is completed in Terminal-1.</strong></p>
 
-##### Connect to deploy a Management cluster
+##### Connect to jumpbox in Terminal-2 to deploy a Management cluster
 
 ```execute-2
 ssh -i id_rsa azureuser@{{ session_namespace }}.centralindia.cloudapp.azure.com -o StrictHostKeyChecking=accept-new
 ```
 
-##### Deploy management cluster
+##### Deploy management cluster using bind. Once this command is executed, wait for a min and then proceed with next command to access the Installer page. 
 
 ```execute-2
 tanzu management-cluster create --ui --bind 0.0.0.0:8080
@@ -82,6 +82,8 @@ cat /home/eduk8s/creds-tkg
 
 ###### Region: West US 2
 
+---------------------
+
 Resource Group: Create a new resource group and provide below name: 
 
 <style>
@@ -94,6 +96,8 @@ H6{color:DarkOrange !important;}
 <p style="color:black"><strong>Example:</strong></p>
 
 ![Info IaaS Provider](images/TKG-mgmt-1.png)
+
+----------------------
     
 Azure VNET Settings: 
     
