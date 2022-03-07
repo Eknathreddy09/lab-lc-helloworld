@@ -31,7 +31,7 @@ cat tkgs-create-cluster.tf
 ```execute
 vi provider.tf
 ```
-###### Example:
+<p style="color:black"><strong>Example:</strong></p>
 
 ![TMC Terraform](images/TMC-token3.png)
 
@@ -70,7 +70,8 @@ terraform apply -target tanzu-mission-control_cluster.create_tkgs_workload -auto
 ```dashboard:open-url
 url: https://partnertanzuseamericas.tmc.cloud.vmware.com/
 ```
-###### Example: 
+<p style="color:black"><strong>Example:</strong></p>
+
 ![Application](images/Terraform-5.png)
 
 ##### Once completely deployed, execute below commands to delete the resources. 
@@ -80,7 +81,8 @@ url: https://partnertanzuseamericas.tmc.cloud.vmware.com/
 ```execute
 terraform destroy -target tanzu-mission-control_cluster.create_tkgs_workload -auto-approve
 ```
-###### Example: 
+<p style="color:black"><strong>Example:</strong></p>
+
 ![Application](images/Terraform-6.png)
 
 ##### Delete the cluster group
