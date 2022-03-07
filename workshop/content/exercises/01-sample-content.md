@@ -127,7 +127,7 @@ Worker node subnet name:
 
 -----------------
 
-Management Cluster Settings: Select <p style="color:orange"><strong>Development</strong></p>
+Management Cluster Settings: <p style="color:orange"><strong>Development</strong></p>
 
 -----------------
 
@@ -152,11 +152,15 @@ Management Cluster Name:
 
 -----------------
     
-###### Metadata: Leave to default and click NEXT
+Metadata: 
+
+###### Leave to default and click NEXT
 
 -----------------
 
-###### Kubernetes Network: Leave to default and click NEXT
+Kubernetes Network: 
+
+###### Leave to default and click NEXT
     
 -----------------
 -----------------
@@ -165,58 +169,80 @@ Management Cluster Name:
 
 -----------------
 
-###### LDAPS Endpoint: partnerdemo.captainvirtualization.in
+LDAPS Endpoint: 
+
+###### partnerdemo.captainvirtualization.in
 
 -----------------
 
-###### port: 636
+port: 
+
+###### 636
 
 -----------------
 
-###### BIND DN (OPTIONAL) : cn=partnerse-admin,cn=Users,dc=partnerdemo,dc=captainvirtualization,dc=in
+BIND DN (OPTIONAL) : 
+
+###### cn=partnerse-admin,cn=Users,dc=partnerdemo,dc=captainvirtualization,dc=in
 
 -----------------
 
-###### BIND PASSWORD (OPTIONAL) : Welcome11!
+BIND PASSWORD (OPTIONAL) : 
+
+###### Welcome11!
 
 -----------------
 
 ##### User Search Attributes
 
+BASE DN (OPTIONAL) : 
 
-
-###### BASE DN (OPTIONAL) : cn=Users,dc=partnerdemo,dc=captainvirtualization,dc=in
-
------------------
-
-###### FILTER (OPTIONAL) : (objectClass=Person)
+###### cn=Users,dc=partnerdemo,dc=captainvirtualization,dc=in
 
 -----------------
 
-###### USERNAME (OPTIONAL) : userPrincipalName
+FILTER (OPTIONAL) : 
+
+###### (objectClass=Person)
+
+-----------------
+
+USERNAME (OPTIONAL) : 
+
+###### userPrincipalName
 
 -----------------
 
 ##### Group Search Attributes
 
 
-###### BASE DN (OPTIONAL) : dc=partnerdemo,dc=captainvirtualization,dc=in
+BASE DN (OPTIONAL) : 
+
+###### dc=partnerdemo,dc=captainvirtualization,dc=in
 
 -----------------
 
-###### FILTER (OPTIONAL) : (objectClass=group)
+FILTER (OPTIONAL) : 
+
+###### (objectClass=group)
 
 -----------------
 
-###### NAME ATTRIBUTE (OPTIONAL) : cn
+NAME ATTRIBUTE (OPTIONAL) : 
+
+###### cn
 
 -----------------
 
-###### USER ATTRIBUTE (OPTIONAL) : DN
+USER ATTRIBUTE (OPTIONAL) : 
+
+###### DN
 
 -----------------
 
-###### GROUP ATTRIBUTE (OPTIONAL) : member
+GROUP ATTRIBUTE (OPTIONAL) : 
+
+###### member
 
 -----------------
 
@@ -232,32 +258,29 @@ cat ~/ldap-ca.pem
 
 ###### verify LDAP configuration : In TEST USER NAME field, use any of the below user to verify the load configuration
 
-|     User Name             |    Password     |
-|    :---:                  |    :---:        |
-|    partnerse-user1        |    Welcome11!   |
-|    partnerse-user2        |    Welcome11!   |
-|    partnerse-user3        |    Welcome11!   |
-|    partnerse-user4        |    Welcome11!   |
-|    partnerse-user5        |    Welcome11!   |
-|    partnerse-user6        |    Welcome11!   |
-|    partnerse-user7        |    Welcome11!   |
-|    partnerse-user8        |    Welcome11!   |
-|    partnerse-user9        |    Welcome11!   |
-|    partnerse-user10       |    Welcome11!   |
-|    partnerse-user11       |    Welcome11!   |
-|    partnerse-user12       |    Welcome11!   |
-|    partnerse-user13       |    Welcome11!   |
-|    partnerse-user14       |    Welcome11!   |
+  |     User Name             |    Password     |
+  |       :---:               |    :---:        |
+  |    partnerse-user1        |    Welcome11!   |
+  |    partnerse-user2        |    Welcome11!   |
+  |    partnerse-user3        |    Welcome11!   |
+  |    partnerse-user4        |    Welcome11!   |
+  |    partnerse-user5        |    Welcome11!   |
+  |    partnerse-user6        |    Welcome11!   |
+  |    partnerse-user7        |    Welcome11!   |
+  |    partnerse-user8        |    Welcome11!   |
+  |    partnerse-user9        |    Welcome11!   |
+  |    partnerse-user10       |    Welcome11!   |
+  |    partnerse-user11       |    Welcome11!   |
+  |    partnerse-user12       |    Welcome11!   |
+  |    partnerse-user13       |    Welcome11!   |
+  |    partnerse-user14       |    Welcome11!   |
 
 ###### Click START
 
 Expected result: 
 
-<p style="color:black"><strong>Example:</strong></p>
-
 ![LDAPS](images/TKG-mgmt-5.png)
 
------------------
 -----------------
     
 ###### OS Image: from dropdown select Ubuntu-20.04
@@ -272,7 +295,7 @@ Expected result:
 
 ![OS Image](images/TKG-mgmt-7.png)
     
-### Cluster creation takes about 15 mins
+<p style="color:red"><strong>Cluster creation takes about 15 mins</strong></p>
 
 ###### Short video on TKG
 
