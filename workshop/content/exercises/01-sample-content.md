@@ -84,7 +84,7 @@ cat /home/eduk8s/creds-tkg
 Resource Group: Create a new resource group and provide below name: 
 
 ```html
-<h3 style="color:#ff0000">###### {{ session_namespace }}-RG</h3>
+<h3 style="color:#ff0000">{{ session_namespace }}-RG</h3>
 ```
 ###### Example:
 
