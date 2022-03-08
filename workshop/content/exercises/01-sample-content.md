@@ -403,20 +403,22 @@ kubectl apply -f ~/clusterrolebinding.yaml
 cat ~/clusterrolebinding.yaml
 ```
 
-#### Stop the Jumpbox, continue further once the task is completed. 
+#### Stop the Jumpbox
+<p style="color:brown"><strong>Please wait for 2 mins once you execute below command. Continue once the ongoing task is completed in Terminal-1.</strong></p>
 
 ```execute-1
 az vm stop -n {{ session_namespace }} -g {{ session_namespace }}-JB
 ```
 
+<p style="color:red"><strong>Once below command is executed, output is displayed on terminal-1 with an url. Click on the url to open in your local browser</strong></p>
+
 ```execute-1
 kubectl --kubeconfig=ldaps-tkg-mgmt-kubeconfig get nodes
 ```
+
 <p style="color:black"><strong>Example:</strong></p>
 
 ![Management Cluster](images/TKG-mgmt-15.png)
-
-<p style="color:black"><strong>The login URL is displayed in terminal-1. copy the url and paste in your local machine browser. </strong></p>
 
 --------------------
 
