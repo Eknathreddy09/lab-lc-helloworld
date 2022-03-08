@@ -5,7 +5,15 @@ metadata:
 spec:
   portal:
     registration:
-      type: anonymous
+      type: one-step
+      enabled: false
+    credentials:
+      admin:
+        username: admin
+        password: Welcome11!
+      robot:
+        username: robot-user
+        password: Newstart@1
   workshops:
   - name: lab-lc-helloworld
     capacity: 25
