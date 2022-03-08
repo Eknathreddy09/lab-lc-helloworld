@@ -6,14 +6,20 @@ spec:
   portal:
     registration:
       type: one-step
-      enabled: false
+      enabled: true
     credentials:
       admin:
         username: admin
         password: Welcome11!
-      robot:
-        username: robot-user
+      user1:
+        username: parterse-user1
         password: Newstart@1
+      user2:
+        username: parterse-user2
+        password: Newstart@2
+      user3:
+        username: parterse-user3
+        password: Newstart@3
   workshops:
   - name: lab-lc-helloworld
     capacity: 25
