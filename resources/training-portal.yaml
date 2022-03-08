@@ -11,6 +11,10 @@ spec:
       admin:
         username: admin
         password: Welcome11!
+    tls:
+      - hosts:
+        - workshop.captainvirtualization.in
+        secretName: secret-workshop
   workshops:
   - name: lab-lc-helloworld
     capacity: 25
