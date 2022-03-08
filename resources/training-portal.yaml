@@ -19,3 +19,7 @@ spec:
     capacity: 25
     expires: 300m
     orphaned: 45m
+  - name: TO-workshop
+    capacity: 25
+    expires: 300m
+    orphaned: 45m
