@@ -13,7 +13,7 @@ spec:
         password: Welcome11!
     tls:
       - hosts:
-        - *.workshop.captainvirtualization.in
+        - "*.workshop.captainvirtualization.in"
         secretName: secret-workshop
   workshops:
   - name: lab-lc-helloworld
