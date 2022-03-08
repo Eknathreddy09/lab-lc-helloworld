@@ -8,6 +8,6 @@ spec:
       type: anonymous
   workshops:
   - name: lab-lc-helloworld
-    capacity: 15
+    capacity: 25
     expires: 300m
-    orphaned: 15m
+    orphaned: 45m
