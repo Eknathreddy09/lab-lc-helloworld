@@ -8,8 +8,8 @@ spec:
       domain: workshop.captainvirtualization.in
 #     secret: secret-workshop
     registration:
-      type: one-step
-      enabled: true
+      type: anonymous
+#      enabled: true
     credentials:
       admin:
         username: admin
