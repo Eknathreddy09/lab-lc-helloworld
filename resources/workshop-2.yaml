@@ -1,0 +1,25 @@
+apiVersion: training.eduk8s.io/v1alpha2
+kind: Workshop
+metadata:
+  name: lab-lc-helloworld
+spec:
+  title: Partner Demo Workshop - Module 1
+  description: Workshop created to demo the TKG cluster lifecycle and overview of TMC command line tools.
+  vendor: eduk8s.io
+  difficulty: beginner
+  duration: 15m
+  url: https://github.com/Eknathreddy09/lab-lc-helloworld
+  content:
+     files: github.com/Eknathreddy09/lab-lc-helloworld?ref=main
+     image: docker.io/eknath009/workshop-module1:latest
+  session:
+    namespaces:
+      budget: small
+    applications:
+      terminal:
+        enabled: true
+        layout: split
+      console:
+        enabled: true
+      editor:
+        enabled: true
